@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Chá de Bebê da Aurora · Confirme sua presença</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Você está convidado para o Chá de Bebê da Aurora. 08 de novembro de 2026, às 13h. Confirme sua presença até 25 de outubro.">
+<link rel="icon" type="image/png" href="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/favicon.png">
+<link rel="apple-touch-icon" href="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/apple-touch-icon.png">
+<meta property="og:type" content="website"><meta property="og:title" content="Chá de Bebê da Aurora"><meta property="og:description" content="Jardim Encantado · 08 de novembro de 2026, 13h. Confirme sua presença até 25/10.">
+<meta property="og:image" content="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#FDEFF2; --surface:#FFF9FA; --surface2:#FADFE6; --ink:#46313C; --muted:#6B535D; --line:#F1D3DB; color-scheme:light;
+  --rose:#C86A8A; --rose-ink:#9C3F62; --rose-soft:#F6D9E2; --lilac:#E4DAF5; --lilac-ink:#55428A; --gold:#8F6A3E; --gold-soft:#F1E3D0;
+  --sage:#5F7A52; --sage-soft:#E3EBDA; --ok:#2F7452; --ok-soft:#DCEFE3; --bad:#A33A4B; --bad-soft:#F7DADF; --focus:#6C4BBA;
+  --shadow:0 1px 2px rgba(90,40,60,.08),0 8px 24px rgba(90,40,60,.07);
+  --display:'Cormorant Garamond',Georgia,serif; --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;padding:0 max(16px,env(safe-area-inset-left,0px)) 56px}
+[hidden]{display:none!important}
+.wrap{max-width:620px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;line-height:1.12;text-wrap:balance;color:var(--rose-ink)}
+h2{font-size:clamp(28px,7vw,36px)}
+h3{font-size:22px}
+p{margin:0 0 .6em}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:8px}
+.rg{height:5px;background:linear-gradient(90deg,#E9B8BC,#C98F7F 50%,#E9B8BC);margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)))}
+
+/* Convite */
+.hero{position:relative;text-align:center;margin-top:18px;padding:26px 16px 22px;background:linear-gradient(180deg,var(--surface),var(--bg));border:1px solid var(--line);border-radius:min(220px,44vw) min(220px,44vw) 28px 28px;overflow:hidden}
+.hero .corner{position:absolute;top:6px;width:min(120px,26vw);height:auto;pointer-events:none}
+.hero .cl{left:4px}.hero .cr{right:4px;transform:scaleX(-1)}
+.hero .logo{display:block;width:min(330px,76vw);height:auto;margin:6px auto 4px;position:relative}
+.hero .lead{font-family:var(--display);font-size:clamp(22px,5.4vw,27px);font-weight:600;color:var(--rose-ink);margin:2px 0 14px}
+.facts{display:grid;gap:10px;margin:14px auto 4px;max-width:440px;text-align:left}
+.fact{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 14px}
+.fact img{width:44px;height:44px;flex:none}
+.fact b{display:block;font-size:16px}
+.fact span{font-size:15px;color:var(--muted)}
+.count{margin:16px 0 0;font-family:var(--display);font-size:22px;color:var(--rose-ink)}
+.count small{display:block;font:500 14px var(--body);color:var(--muted)}
+.divider{display:block;width:100%;max-width:560px;height:auto;margin:22px auto 6px}
+
+/* Cartões e formulários */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:22px 18px;margin-top:16px}
+.card>h2{margin-bottom:6px}
+.sub{color:var(--muted);font-size:16px}
+label{display:block;font-weight:600;margin:16px 0 6px}
+.opt{font-weight:400;color:var(--muted)}
+input[type=text],select,textarea{width:100%;background:#fff;border:1.5px solid #E4C3CD;border-radius:14px;padding:14px;min-height:50px}
+textarea{min-height:92px;resize:vertical}
+.search{position:relative}
+.results{display:grid;gap:8px;margin-top:10px}
+.res{display:flex;justify-content:space-between;gap:10px;align-items:center;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:13px 14px;cursor:pointer;min-height:56px}
+.res:hover,.res:focus-visible{border-color:var(--rose);background:var(--rose-soft)}
+.res b{display:block;font-size:17px}
+.res span{display:block;font-size:14px;color:var(--muted)}
+.res i{font-style:normal;color:var(--rose-ink);font-weight:700;font-size:20px}
+.hint{font-size:15px;color:var(--muted);margin:10px 0 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:12px 20px;border-radius:999px;border:0;background:var(--rose-ink);color:#fff;font-weight:700;cursor:pointer;text-decoration:none;text-align:center}
+.btn:hover{filter:brightness(1.07)}
+.btn:disabled{opacity:.55;cursor:default}
+.btn.ghost{background:var(--surface);color:var(--rose-ink);border:1.5px solid var(--rose)}
+.btn.sage{background:var(--sage)}
+.btn.block{display:flex;width:100%}
+.link{background:none;border:0;padding:6px 2px;color:var(--rose-ink);text-decoration:underline;cursor:pointer;font-weight:600}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 4px}
+.choice button{min-height:78px;border-radius:18px;border:2px solid var(--line);background:#fff;cursor:pointer;font-weight:700;font-size:17px;padding:10px}
+.choice button[aria-pressed=true].yes{border-color:var(--ok);background:var(--ok-soft);color:var(--ok)}
+.choice button[aria-pressed=true].no{border-color:var(--bad);background:var(--bad-soft);color:var(--bad)}
+.step{display:flex;align-items:center;gap:14px;margin:6px 0}
+.step button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--rose);background:#fff;color:var(--rose-ink);font-size:26px;line-height:1;cursor:pointer}
+.step output{min-width:34px;text-align:center;font:700 26px var(--display)}
+.person{display:grid;grid-template-columns:1fr;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:12px;margin-top:10px}
+.person label{margin:0 0 -2px;font-size:14px;color:var(--muted)}
+.err{background:var(--bad-soft);color:var(--bad);border-radius:14px;padding:12px 14px;margin-top:14px;font-weight:600}
+.who{display:flex;gap:10px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
+.tag{display:inline-block;background:var(--lilac);color:var(--lilac-ink);border-radius:999px;padding:3px 12px;font-size:14px;font-weight:600}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* Confirmado */
+.done{text-align:center}
+.done .basket{width:min(210px,56vw);height:auto;display:block;margin:0 auto 6px}
+.sum{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:12px 14px;text-align:left;margin:14px 0;font-size:16px}
+.sum b{color:var(--rose-ink)}
+.acts{display:grid;gap:10px;margin-top:14px}
+.acts .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:380px){.acts .row{grid-template-columns:1fr}}
+
+/* Informações */
+.info{display:grid;gap:14px}
+.info>div{display:flex;gap:12px;align-items:flex-start}
+.info img{width:46px;height:46px;flex:none}
+.info b{display:block}
+.info p{margin:0;color:var(--muted);font-size:16px}
+.maps{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.maps a{font-weight:700;color:var(--rose-ink)}
+footer{text-align:center;color:var(--muted);font-size:14px;margin-top:30px}
+footer img{display:block;width:130px;height:auto;margin:0 auto 6px}
+.spin{display:inline-block;width:18px;height:18px;border:3px solid var(--rose-soft);border-top-color:var(--rose-ink);border-radius:50%;animation:sp .8s linear infinite;vertical-align:-3px}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.spin{animation:none}}
+</style>
+</head>
+<body>
+<div class="rg"></div>
+<div class="wrap">
+
+<header class="hero">
+  <h1 style="margin:0"><img class="logo" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/logo-arco.webp" alt="Chá de Bebê da Aurora" width="330" height="269"></h1>
+  <p class="lead">Jardim Encantado</p>
+  <div class="facts">
+    <div class="fact"><img src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/ic-calendario.webp" alt=""><div><b>Domingo, 8 de novembro de 2026</b><span>às 13h</span></div></div>
+    <div class="fact"><img src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/ic-local.webp" alt=""><div><b>Alameda Sabiá, 51</b><span>Condomínio Chácara da Lagoa, Itapecerica da Serra/SP</span></div></div>
+  </div>
+  <p class="count" id="count" hidden></p>
+</header>
+<img class="divider" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/divisor.webp" alt="">
+
+<main>
+  <!-- 1. busca -->
+  <section class="card" id="sBusca" aria-labelledby="tBusca">
+    <h2 id="tBusca">Confirme sua presença</h2>
+    <p class="sub">Digite seu nome e toque em você na lista. Respostas até <b>25 de outubro</b>.</p>
+    <div class="search">
+      <label for="q" class="sr" style="margin-top:12px">Seu nome</label>
+      <input id="q" type="text" inputmode="text" autocomplete="off" autocapitalize="words" spellcheck="false" placeholder="Comece a digitar seu nome" aria-controls="res">
+      <div class="results" id="res" role="list" aria-live="polite"></div>
+      <p class="hint" id="hintBusca"></p>
+    </div>
+    <p class="hint" style="margin-top:16px">Ainda não sabe? <button class="link" id="btnLembrar" type="button">Me lembre de confirmar depois</button></p>
+    <div id="lembrar" hidden style="margin-top:8px">
+      <p class="sub">Escolha quando quer ser lembrado. Vai para a agenda do seu celular, com alarme.</p>
+      <div class="acts" id="lembrarOps"></div>
+    </div>
+  </section>
+
+  <!-- 2. formulário -->
+  <section class="card" id="sForm" hidden aria-labelledby="tForm">
+    <div class="who"><h2 id="tForm"></h2><button class="link" id="trocar" type="button">Não sou eu</button></div>
+    <p class="sub" id="grupoTxt"></p>
+    <form id="f" novalidate>
+      <div class="hp" aria-hidden="true"><label>Site <input type="text" name="site" id="hp" tabindex="-1" autocomplete="off"></label></div>
+      <p style="font-weight:600;margin:18px 0 0" id="pVai">Vocês vão ao chá?</p>
+      <div class="choice" role="group" aria-labelledby="pVai">
+        <button type="button" class="yes" id="bSim" aria-pressed="false">Vamos! 🎉</button>
+        <button type="button" class="no" id="bNao" aria-pressed="false">Não poderemos ir</button>
+      </div>
+
+      <div id="detalhes" hidden>
+        <label for="nA">Quantos adultos vêm?</label>
+        <div class="step"><button type="button" id="aMenos" aria-label="Menos um adulto">−</button><output id="nA" aria-live="polite">1</output><button type="button" id="aMais" aria-label="Mais um adulto">+</button><span class="sub" id="aMax"></span></div>
+        <div id="pessoas"></div>
+
+        <div id="blocoCri" hidden>
+          <label for="nC">Quantas crianças vêm?</label>
+          <div class="step"><button type="button" id="cMenos" aria-label="Menos uma criança">−</button><output id="nC" aria-live="polite">0</output><button type="button" id="cMais" aria-label="Mais uma criança">+</button><span class="sub" id="cMax"></span></div>
+          <div id="criTxt" hidden>
+            <label for="nomesCri">Nome e idade das crianças</label>
+            <input id="nomesCri" type="text" maxlength="300" placeholder="Ex.: Nina, 6 anos, e Liz, 3 anos">
+          </div>
+        </div>
+
+        <label for="alergia">Alergia ou restrição alimentar? <span class="opt">(opcional)</span></label>
+        <input id="alergia" type="text" maxlength="300" placeholder="Ex.: lactose, amendoim, glúten">
+      </div>
+
+      <div id="blocoMsg" hidden>
+        <label for="msg">Um recado para a Aurora e os papais? <span class="opt">(opcional)</span></label>
+        <textarea id="msg" maxlength="400" placeholder="Escreva com carinho, a gente vai ler tudo."></textarea>
+      </div>
+
+      <div class="err" id="erro" role="alert" hidden></div>
+      <button class="btn block" id="enviar" type="submit" style="margin-top:20px" disabled>Enviar resposta</button>
+    </form>
+  </section>
+
+  <!-- 3. confirmado / recusado -->
+  <section class="card done" id="sOk" hidden aria-live="polite">
+    <img class="basket" id="okImg" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/cesto-obrigado.webp" alt="">
+    <h2 id="okT"></h2>
+    <p class="sub" id="okP"></p>
+    <div class="sum" id="okSum"></div>
+    <div class="acts" id="okActs"></div>
+    <p class="hint"><button class="link" id="alterar" type="button">Alterar minha resposta</button> (até 25/10)</p>
+  </section>
+
+  <!-- 4. prazo -->
+  <section class="card" id="sFim" hidden>
+    <h2>As confirmações foram encerradas</h2>
+    <p class="sub">O prazo terminou em 25 de outubro. Se precisar mudar algo, fale direto com a Andressa ou com o Sidney.</p>
+  </section>
+
+  <!-- informações -->
+  <section class="card" aria-labelledby="tInfo">
+    <h2 id="tInfo" style="margin-bottom:12px">Para você se programar</h2>
+    <div class="info">
+      <div><img src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/ic-local.webp" alt="">
+        <div><b>Como chegar</b>
+          <p>Alameda Sabiá, 51, Condomínio Chácara da Lagoa, Itapecerica da Serra/SP.</p>
+          <p><b style="display:inline">De Uber ou 99:</b> peça para desembarcar na <b style="display:inline">portaria do condomínio</b>. A casa fica a cerca de 100 metros dali.</p>
+          <div class="maps"><a id="lMaps" target="_blank" rel="noopener">Abrir no Google Maps</a><a id="lWaze" target="_blank" rel="noopener">Abrir no Waze</a></div></div></div>
+      <div><img src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/ic-convite.webp" alt="">
+        <div><b>O que vestir</b>
+          <p>Vai estar calor e o chá é ao ar livre, no jardim. Pense em <b style="display:inline">leve e bem arrumado</b>: vestido ou conjunto leve, camisa ou polo com bermuda de alfaiataria ou calça fresca. Tons claros e pastéis combinam com o jardim.</p>
+          <p>Para curtir sem sofrer: sapato baixo ou sandália fechada no calcanhar (salto fino afunda na grama). Evite camiseta de time, regata e chinelo de dedo.</p></div></div>
+      <div><img src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/ic-mamadeira.webp" alt="">
+        <div><b>Bebidas</b>
+          <p>Vamos ter opções sem álcool, inclusive cerveja zero. Conte sua preferência na confirmação para a gente acertar na compra.</p></div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/logo-nome.webp" alt="Aurora" width="130" height="96" loading="lazy">
+  Feito com carinho para a chegada da Aurora.
+</footer>
+</div>
+
+<script>
+(function(){
+'use strict';
+var SB='https://phfciuifxiqurctfxvrl.supabase.co/rest/v1/rpc/',KEY='sb_publishable_nZMrUiyrjjwIidIT_9NL0g_qdRwG7wE';
+var PRAZO=new Date('2026-10-26T00:00:00-03:00'),EVENTO=new Date('2026-11-08T13:00:00-03:00');
+var ENDER='Alameda Sabiá, 51, Condomínio Chácara da Lagoa, Itapecerica da Serra, SP';
+var URL_SITE=location.origin+location.pathname;
+var DRINKS=['Cerveja','Cerveja zero álcool','Refrigerante','Suco','Água','Sem preferência'];
+var $=function(id){return document.getElementById(id)};
+var S={g:null,vai:null,nA:1,nC:0,maxA:1,maxC:0,busy:false,tm:null,reqN:0,enc:false};
+try{history.scrollRestoration='manual'}catch(e){}
+
+function rpc(fn,body){return fetch(SB+fn,{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+KEY,'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.text().then(function(t){var j=null;try{j=t?JSON.parse(t):null}catch(e){}if(!r.ok){var m=(j&&j.message)||'erro';var e=new Error(m);e.status=r.status;throw e}return j})})}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function show(id){['sBusca','sForm','sOk','sFim'].forEach(function(x){$(x).hidden=(x!==id)});if(id!=='sBusca')window.scrollTo({top:0,behavior:'smooth'})}
+function fmtD(d){return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'long'})}
+
+/* contagem regressiva */
+(function(){var d=Math.ceil((EVENTO-new Date())/864e5);var c=$('count');if(d>0){c.hidden=false;c.innerHTML='Faltam '+d+(d===1?' dia':' dias')+'<small>para o chá da Aurora</small>'}else if(d===0){c.hidden=false;c.innerHTML='É hoje!'}})();
+$('lMaps').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(ENDER);
+$('lWaze').href='https://waze.com/ul?q='+encodeURIComponent(ENDER)+'&navigate=yes';
+
+/* prazo */
+S.enc=new Date()>=PRAZO;
+if(S.enc){show('sFim')}
+
+/* ---------- busca ---------- */
+$('q').addEventListener('input',function(){
+  var v=this.value.trim();clearTimeout(S.tm);
+  if(v.length<3){$('res').innerHTML='';$('hintBusca').textContent=v.length?'Digite pelo menos 3 letras.':'';return}
+  $('hintBusca').innerHTML='<span class="spin" aria-hidden="true"></span> Procurando...';
+  var n=++S.reqN;
+  S.tm=setTimeout(function(){
+    rpc('convidado_buscar',{q:v}).then(function(r){
+      if(n!==S.reqN)return;
+      if(!r||!r.length){$('res').innerHTML='';$('hintBusca').textContent='Não encontramos esse nome. Tente só o primeiro nome ou outra grafia. Se continuar sem aparecer, avise a Andressa ou o Sidney.';return}
+      $('hintBusca').textContent=r.length+(r.length===1?' resultado. Toque para continuar.':' resultados. Toque no seu.');
+      $('res').innerHTML=r.map(function(x){var com=x.com&&x.com.trim()?'com '+esc(x.com):'sozinho(a)';var rot=x.rotulo?' · '+esc(x.rotulo):'';return '<button type="button" class="res" role="listitem" data-id="'+esc(x.id)+'"><span><b>'+esc(x.nome)+'</b><span>'+com+rot+'</span></span><i aria-hidden="true">›</i></button>'}).join('')
+    }).catch(function(){if(n!==S.reqN)return;$('res').innerHTML='';$('hintBusca').textContent='Sem conexão agora. Confira sua internet e tente de novo.'})
+  },280)
+});
+$('res').addEventListener('click',function(e){var b=e.target.closest('.res');if(b)abrir(b.getAttribute('data-id'),b)});
+
+function abrir(id,btn){
+  if(btn){btn.disabled=true;btn.style.opacity='.6'}
+  rpc('convidado_obter',{p_id:id}).then(function(g){
+    if(!g){$('hintBusca').textContent='Não consegui abrir esse convite. Tente de novo.';if(btn){btn.disabled=false;btn.style.opacity=''}return}
+    S.g=g;montarForm();
+    if(!g.aberto){S.enc=true;show('sFim');return}
+    show('sForm')
+  }).catch(function(){$('hintBusca').textContent='Sem conexão agora. Tente de novo.';if(btn){btn.disabled=false;btn.style.opacity=''}})
+}
+$('trocar').onclick=function(){S.g=null;show('sBusca');$('q').focus()};
+
+/* ---------- formulário ---------- */
+function nomesDe(g){
+  var base=[g.nome];var t=(g.acompanhantes||'').trim();
+  if(t&&!/^mais\s+\d+/i.test(t)&&!/opcional/i.test(t)){t.split(/\s*,\s*|\s+e\s+/i).forEach(function(p){p=p.trim();if(!p)return;if(/^(vó|avó)/i.test(p))base.push('');else if(!/^mais\s/i.test(p))base.push(p.replace(/\s*\(.*?\)\s*/g,'').trim())})}
+  return base
+}
+function montarForm(){
+  var g=S.g,r=g.rsvp&&g.rsvp.vai!=null?g.rsvp:null;
+  S.maxA=Math.max(1,g.rsvp&&g.rsvp.convidadosAdultos!=null?g.rsvp.convidadosAdultos:(g.adultos||1));
+  S.maxC=Math.max(0,g.rsvp&&g.rsvp.convidadosCriancas!=null?g.rsvp.convidadosCriancas:(g.criancas||0));
+  $('tForm').textContent='Olá, '+g.nome.split(' ')[0]+'!';
+  var com=(g.acompanhantes||'').trim();
+  $('grupoTxt').textContent='Convite para '+g.nome+(com?', com '+com:'')+'. '+S.maxA+(S.maxA===1?' adulto':' adultos')+(S.maxC?' e '+S.maxC+(S.maxC===1?' criança':' crianças'):'')+'.';
+  S.vai=null;S.nA=S.maxA;S.nC=S.maxC;
+  $('bSim').setAttribute('aria-pressed','false');$('bNao').setAttribute('aria-pressed','false');
+  $('detalhes').hidden=true;$('blocoMsg').hidden=true;$('erro').hidden=true;$('enviar').disabled=true;
+  $('alergia').value='';$('msg').value='';$('nomesCri').value='';$('hp').value='';
+  $('blocoCri').hidden=S.maxC===0;
+  $('aMax').textContent='(até '+S.maxA+')';$('cMax').textContent='(até '+S.maxC+')';
+  S.names=nomesDe(g);S.drinks={};
+  if(r){
+    S.vai=!!r.vai;S.nA=g.status==='confirmado'?Math.min(S.maxA,g.adultos||S.maxA):S.maxA;S.nC=g.status==='confirmado'?Math.min(S.maxC,g.criancas||0):S.maxC;
+    if(r.alergia)$('alergia').value=r.alergia;if(r.mensagem)$('msg').value=r.mensagem;if(r.nomesCriancas)$('nomesCri').value=r.nomesCriancas;
+    if(r.quemVem){var q=r.quemVem.split(/\s*;\s*/);if(q.length)S.names=q}
+    if(r.bebida){r.bebida.split(/\s*;\s*/).forEach(function(p,i){var m=p.split(/:\s*/);if(m[1])S.drinks[i]=m[1]})}
+  }
+  if(S.vai!==null)escolher(S.vai,true);
+  desenhar()
+}
+function escolher(v,silent){
+  S.vai=v;$('bSim').setAttribute('aria-pressed',v?'true':'false');$('bNao').setAttribute('aria-pressed',v?'false':'true');
+  $('detalhes').hidden=!v;$('blocoMsg').hidden=false;$('enviar').disabled=false;
+  $('enviar').textContent=v?'Confirmar presença':'Enviar resposta';desenhar();
+}
+$('bSim').onclick=function(){escolher(true)};$('bNao').onclick=function(){escolher(false)};
+function desenhar(){
+  $('nA').textContent=S.nA;$('nC').textContent=S.nC;
+  $('aMenos').disabled=S.nA<=1;$('aMais').disabled=S.nA>=S.maxA;$('cMenos').disabled=S.nC<=0;$('cMais').disabled=S.nC>=S.maxC;
+  $('criTxt').hidden=S.nC===0;
+  var h='';
+  for(var i=0;i<S.nA;i++){
+    var nm=S.names[i]!=null?S.names[i]:'';var dv=S.drinks[i]||'';
+    h+='<div class="person"><label for="pn'+i+'">Adulto '+(i+1)+'</label><input type="text" id="pn'+i+'" data-i="'+i+'" class="pn" maxlength="60" value="'+esc(nm)+'" placeholder="Nome completo (obrigatório)"><label for="pd'+i+'" style="margin-top:4px">O que prefere beber?</label><select id="pd'+i+'" data-i="'+i+'" class="pd"><option value="">Escolha...</option>'+DRINKS.map(function(d){return '<option'+(d===dv?' selected':'')+'>'+d+'</option>'}).join('')+'</select></div>'
+  }
+  $('pessoas').innerHTML=h
+}
+$('pessoas').addEventListener('input',function(e){var t=e.target,i=+t.getAttribute('data-i');if(t.classList.contains('pn'))S.names[i]=t.value});
+$('pessoas').addEventListener('change',function(e){var t=e.target,i=+t.getAttribute('data-i');if(t.classList.contains('pd'))S.drinks[i]=t.value});
+$('aMenos').onclick=function(){if(S.nA>1){S.nA--;desenhar()}};$('aMais').onclick=function(){if(S.nA<S.maxA){S.nA++;desenhar()}};
+$('cMenos').onclick=function(){if(S.nC>0){S.nC--;desenhar()}};$('cMais').onclick=function(){if(S.nC<S.maxC){S.nC++;desenhar()}};
+
+function erro(t){var e=$('erro');e.textContent=t;e.hidden=false;e.scrollIntoView({block:'center',behavior:'smooth'})}
+$('f').addEventListener('submit',function(ev){
+  ev.preventDefault();if(S.busy||S.vai===null)return;$('erro').hidden=true;
+  if($('hp').value){return}
+  var g=S.g,extra={mensagem:$('msg').value.trim()},adultos=S.vai?S.nA:g.adultos||S.maxA,cri=S.vai?S.nC:g.criancas||S.maxC;
+  if(S.vai){
+    var nomes=[],beb=[];
+    for(var i=0;i<S.nA;i++){var n=(S.names[i]||'').trim();if(!n){erro('Preencha o nome do adulto '+(i+1)+'.');return}if(!S.drinks[i]){erro('Escolha o que '+n+' prefere beber.');return}nomes.push(n);beb.push(n+': '+S.drinks[i])}
+    extra.quemVem=nomes.join('; ');extra.bebida=beb.join('; ');
+    if(S.nC>0){var nc=$('nomesCri').value.trim();if(!nc){erro('Conte o nome e a idade das crianças.');return}extra.nomesCriancas=nc}
+    var al=$('alergia').value.trim();if(al)extra.alergia=al;
+  }
+  S.busy=true;var b=$('enviar'),old=b.textContent;b.disabled=true;b.innerHTML='<span class="spin"></span> Enviando...';
+  rpc('convidado_confirmar',{p_id:g.id,p_vai:S.vai,p_adultos:S.vai?S.nA:adultos,p_criancas:S.vai?S.nC:cri,p_extra:extra}).then(function(){
+    S.busy=false;b.textContent=old;concluir(extra)
+  }).catch(function(e){
+    S.busy=false;b.disabled=false;b.textContent=old;
+    if(/prazo_encerrado/.test(e.message)){S.enc=true;show('sFim');return}
+    erro('Não foi possível enviar agora. Confira a internet e tente de novo. Se persistir, avise a Andressa ou o Sidney.')
+  })
+});
+
+/* ---------- concluído ---------- */
+function concluir(extra){
+  var g=S.g,vai=S.vai;
+  g.status=vai?'confirmado':'recusado';g.adultos=vai?S.nA:g.adultos;g.criancas=vai?S.nC:g.criancas;g.rsvp=Object.assign({vai:vai,convidadosAdultos:S.maxA,convidadosCriancas:S.maxC},extra);
+  $('okImg').src='https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/cesto-obrigado.webp';
+  var acts=$('okActs');
+  if(vai){
+    $('okT').textContent='Presença confirmada!';
+    $('okP').textContent='Obrigada por vir celebrar a chegada da Aurora com a gente. Já avisamos a Andressa e o Sidney.';
+    var n=S.nA+S.nC;
+    $('okSum').innerHTML='<b>'+esc(g.nome)+'</b><br>'+S.nA+(S.nA===1?' adulto':' adultos')+(S.nC?' e '+S.nC+(S.nC===1?' criança':' crianças'):'')+' · Domingo, 8 de novembro, às 13h';
+    acts.innerHTML='<a class="btn block" id="aIcs" href="#">Adicionar à agenda (com lembretes)</a>'
+      +'<div class="row"><a class="btn ghost" id="aGoog" target="_blank" rel="noopener">Google Agenda</a><a class="btn ghost" id="aMaps" target="_blank" rel="noopener">Como chegar</a></div>'
+      +'<button class="btn sage block" id="aZap" type="button">Enviar o convite para quem vem com você</button>';
+    $('aIcs').onclick=function(e){e.preventDefault();baixarIcs(icsEvento(),'cha-da-aurora.ics')};
+    $('aGoog').href=googEvento();$('aMaps').href=$('lMaps').href;
+    $('aZap').onclick=encaminhar
+  }else{
+    $('okT').textContent='Obrigada por avisar';
+    $('okP').textContent='Vamos sentir sua falta, mas agradecemos o carinho. Se algo mudar até 25 de outubro, é só voltar aqui e alterar a resposta.';
+    $('okSum').innerHTML='<b>'+esc(g.nome)+'</b><br>Resposta registrada: não poderão ir.';
+    acts.innerHTML=''
+  }
+  show('sOk')
+}
+$('alterar').onclick=function(){montarForm();show('sForm')};
+
+/* ---------- agenda e compartilhar ---------- */
+function z(n){return (n<10?'0':'')+n}
+function utc(d){return d.getUTCFullYear()+z(d.getUTCMonth()+1)+z(d.getUTCDate())+'T'+z(d.getUTCHours())+z(d.getUTCMinutes())+'00Z'}
+function ics(o){
+  var L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Cha da Aurora//PT','CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT','UID:'+o.uid+'@cha-da-aurora','DTSTAMP:'+utc(new Date()),'DTSTART:'+utc(o.ini),'DTEND:'+utc(o.fim),'SUMMARY:'+o.t,'LOCATION:'+o.loc.replace(/,/g,'\\,'),'DESCRIPTION:'+o.desc.replace(/\n/g,'\\n').replace(/,/g,'\\,')];
+  o.alarms.forEach(function(a){L.push('BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+o.t,'TRIGGER:'+a,'END:VALARM')});
+  L.push('END:VEVENT','END:VCALENDAR');return L.join('\r\n')
+}
+function icsEvento(){return ics({uid:'evento',ini:EVENTO,fim:new Date(EVENTO.getTime()+4*36e5),t:'Chá de Bebê da Aurora',loc:ENDER,desc:'Jardim Encantado. Desembarque de Uber na portaria do condomínio (a cerca de 100 m da casa). Traje: leve e bem arrumado, sapato baixo. '+URL_SITE,alarms:['-P1D','-PT3H']})}
+function googEvento(){return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Chá de Bebê da Aurora')+'&dates='+utc(EVENTO)+'/'+utc(new Date(EVENTO.getTime()+4*36e5))+'&location='+encodeURIComponent(ENDER)+'&details='+encodeURIComponent('Jardim Encantado. Desembarque de Uber na portaria do condomínio. '+URL_SITE)}
+function baixarIcs(txt,nome){
+  var blob=new Blob([txt],{type:'text/calendar;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download=nome;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(url);a.remove()},800)
+}
+function encaminhar(){
+  var txt='Você está convidado para o Chá de Bebê da Aurora! 🌸\nDomingo, 8 de novembro de 2026, às 13h\n'+ENDER+'\nConfirme sua presença até 25/10: '+URL_SITE;
+  if(navigator.share){navigator.share({title:'Chá de Bebê da Aurora',text:txt}).catch(function(){})}
+  else{window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank','noopener')}
+}
+
+/* lembrete para confirmar depois */
+$('btnLembrar').onclick=function(){
+  var box=$('lembrar');box.hidden=!box.hidden;if(box.hidden)return;
+  var now=new Date(),ops=[];
+  function add(label,dias){var d=new Date(now.getFullYear(),now.getMonth(),now.getDate()+dias,9,0,0);if(d<PRAZO)ops.push({l:label,d:d})}
+  add('Amanhã às 9h',1);add('Daqui a 2 dias às 9h',2);
+  var ult=new Date(2026,9,24,9,0,0);if(ult>now)ops.push({l:'Sábado, 24/10, às 9h (véspera do prazo)',d:ult});
+  if(!ops.length){$('lembrarOps').innerHTML='<p class="sub">O prazo está no fim. Confirme agora mesmo pela busca acima.</p>';return}
+  $('lembrarOps').innerHTML=ops.map(function(o,i){return '<button class="btn ghost block" type="button" data-i="'+i+'">'+o.l+'</button>'}).join('');
+  $('lembrarOps').onclick=function(e){var b=e.target.closest('button');if(!b)return;var o=ops[+b.getAttribute('data-i')];
+    var fim=new Date(o.d.getTime()+15*6e4);
+    baixarIcs(ics({uid:'lembrete-'+o.d.getTime(),ini:o.d,fim:fim,t:'Confirmar presença no Chá da Aurora',loc:'',desc:'Responda aqui até 25/10: '+URL_SITE,alarms:['PT0M']}),'lembrete-cha-da-aurora.ics');
+    b.textContent='Lembrete salvo na agenda'}
+};
+})();
+</script>
+</body>
+</html>
