@@ -106,13 +106,87 @@ footer img{display:block;width:130px;height:auto;margin:0 auto 6px}
 .spin{display:inline-block;width:18px;height:18px;border:3px solid var(--rose-soft);border-top-color:var(--rose-ink);border-radius:50%;animation:sp .8s linear infinite;vertical-align:-3px}
 @keyframes sp{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.spin{animation:none}}
+
+/* ---------- Abertura animada do convite ---------- */
+.intro{position:relative;height:430vh;margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)))}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;place-items:center;background:radial-gradient(120% 90% at 50% 20%,#FFF6F8 0%,#FBE3EA 60%,#F4CFDA 100%)}
+.stage::before{content:"";position:absolute;inset:0;background:url(https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/linho.webp);background-size:260px;opacity:.28;mix-blend-mode:multiply}
+.stage .corner{position:absolute;width:min(170px,38vw);height:auto;pointer-events:none;opacity:.95}
+.stage .c1{top:-6px;left:-6px}.stage .c2{bottom:-6px;right:-6px;transform:rotate(180deg)}
+.bf{position:absolute;width:min(84px,19vw);height:auto;pointer-events:none;will-change:transform;filter:drop-shadow(0 6px 8px rgba(120,60,80,.18))}
+.bf.b1{left:9%;top:18%;animation:fl1 7s ease-in-out infinite}
+.bf.b2{right:8%;top:30%;width:min(70px,16vw);animation:fl2 8.5s ease-in-out infinite}
+.bf.b3{left:16%;bottom:16%;width:min(62px,14vw);animation:fl3 9.5s ease-in-out infinite}
+@keyframes fl1{0%,100%{transform:translate(0,0) rotate(-8deg)}50%{transform:translate(18px,-22px) rotate(8deg)}}
+@keyframes fl2{0%,100%{transform:translate(0,0) rotate(10deg)}50%{transform:translate(-22px,16px) rotate(-6deg)}}
+@keyframes fl3{0%,100%{transform:translate(0,0) rotate(4deg)}50%{transform:translate(16px,-14px) rotate(-10deg)}}
+.pre{position:absolute;top:max(22px,env(safe-area-inset-top,0px));left:0;right:0;text-align:center;font-family:var(--display);color:var(--rose-ink);font-size:clamp(20px,5.4vw,26px);font-weight:600;line-height:1.2;padding:0 20px}
+.pre small{display:block;font:500 13px var(--body);letter-spacing:.02em;color:var(--muted);margin-top:4px}
+.env{position:relative;width:min(88vw,430px);aspect-ratio:1.5/1;perspective:900px;will-change:transform,opacity;margin-top:8vh}
+.env>*{position:absolute}
+.env .eback{inset:0;background:linear-gradient(180deg,#EBB2C0,#E49DB0);border-radius:8px;box-shadow:0 18px 40px rgba(120,50,75,.28);z-index:1}
+.env .paper{left:6%;right:6%;top:7%;height:86%;background:#FFFDF8 url(https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/linho.webp);background-size:200px;border-radius:5px;z-index:2;box-shadow:0 2px 8px rgba(100,50,70,.18);will-change:transform,opacity}
+.env .paper::after{content:"";position:absolute;left:14%;right:14%;top:18%;height:42%;background:repeating-linear-gradient(180deg,rgba(200,106,138,.28) 0 2px,transparent 2px 15px)}
+.env .front{inset:0;z-index:3;background:linear-gradient(160deg,#F7CAD6,#F0B3C4);clip-path:polygon(0 0,50% 57%,100% 0,100% 100%,0 100%);border-radius:8px}
+.env .front::after{content:"";position:absolute;inset:0;background:url(https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/linho.webp);background-size:220px;opacity:.22;mix-blend-mode:multiply}
+.env .flap{left:0;right:0;top:0;height:100%;z-index:4;transform-origin:50% 0;transform-style:preserve-3d;will-change:transform}
+.env .flap i{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 57%);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.env .flap .ff{background:linear-gradient(180deg,#F9D3DD,#EFA9BD)}
+.env .flap .fb{background:linear-gradient(0deg,#E9A3B8,#F3BDCB);transform:rotateX(180deg)}
+.seal{position:absolute;left:50%;top:57%;width:min(74px,17vw);aspect-ratio:1;transform:translate(-50%,-50%);z-index:6;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F4D79B,#CFA24F 60%,#A97B2F);box-shadow:0 4px 10px rgba(90,50,20,.4),inset 0 0 0 3px rgba(255,255,255,.25);display:grid;place-items:center;will-change:transform,opacity}
+.seal img{width:72%;height:auto}
+.card{position:absolute;left:50%;top:calc(50% - 38px);width:min(90vw,500px);max-height:calc(100vh - 170px);max-height:calc(100svh - 170px);overflow:hidden;transform:translate(-50%,-50%);z-index:8;background:#FFFDF8 url(https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/linho.webp);background-size:240px;border:1px solid #F1D3DB;border-radius:18px;padding:clamp(22px,6vw,38px) clamp(20px,6vw,38px) clamp(20px,5vw,30px);text-align:center;box-shadow:0 24px 60px rgba(120,50,75,.3);opacity:0;pointer-events:none;will-change:transform,opacity}
+.card .mono{display:block;width:clamp(52px,min(14vw,8vh),78px);height:auto;margin:-4px auto 6px}
+.card .ln{opacity:0;will-change:transform,opacity}
+.card .sal{font-family:'Pinyon Script',cursive;font-size:clamp(28px,min(8vw,4.6vh),40px);color:var(--rose-ink);line-height:1.1;margin:0 0 8px}
+.card p.t{font-family:var(--display);font-weight:600;font-size:clamp(16px,min(4.7vw,2.75vh),22px);line-height:1.38;color:var(--ink);margin:0 0 .7em}
+.card .when{font-family:var(--display);font-weight:700;font-size:clamp(19px,5.2vw,24px);color:var(--rose-ink);margin:.4em 0 .5em}
+.card .when small{display:block;font:500 14px var(--body);color:var(--muted)}
+.card .sig{font-family:'Pinyon Script',cursive;font-size:clamp(28px,7.6vw,36px);color:var(--rose-ink);line-height:1.15;margin:6px 0 0}
+.card .sig small{display:block;font:500 13px var(--body);color:var(--muted);margin-top:2px}
+.cta{position:absolute;left:0;right:0;bottom:max(22px,env(safe-area-inset-bottom,0px));display:grid;place-items:center;gap:6px;z-index:9;opacity:0;pointer-events:none}
+.cta .btn{box-shadow:0 8px 22px rgba(156,63,98,.35)}
+.cta .arrow{font-size:22px;color:var(--rose-ink);animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.open{position:absolute;left:0;right:0;bottom:max(26px,env(safe-area-inset-bottom,0px));display:grid;place-items:center;gap:8px;z-index:9}
+.open small{color:var(--muted);font-size:14px}
+.skip{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:14px;z-index:10;background:rgba(255,249,250,.8);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--rose-ink);font-weight:600;cursor:pointer;text-decoration:none}
+@media (max-height:700px){.card .mono{display:none}.card{padding-top:20px}}
+@media (prefers-reduced-motion:reduce){
+  .intro{height:auto}.stage{position:relative;height:auto;min-height:100svh;padding:40px 0}
+  .env,.bf,.open,.cta,.skip,.seal,.pre{display:none}.card{position:relative;left:auto;top:auto;transform:none;opacity:1;margin:0 auto}.card .ln{opacity:1}
+}
 </style>
 </head>
 <body>
+<section class="intro" id="intro" aria-label="Convite">
+  <div class="stage" id="stage">
+    <img class="corner c1" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/cantoneira.webp" alt="">
+    <img class="corner c2" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/cantoneira.webp" alt="">
+    <img class="bf b1" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/borb-rosa.webp" alt=""><img class="bf b2" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/borb-lilas.webp" alt=""><img class="bf b3" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/borb-dourada.webp" alt="">
+    <a class="skip" href="#topo" id="skip">Pular</a>
+    <div class="pre" id="pre">Você recebeu um convite<small>com muito carinho, para você</small></div>
+    <div class="env" id="env">
+      <div class="eback"></div><div class="paper" id="paper"></div><div class="front"></div>
+      <div class="flap" id="flap"><i class="ff"></i><i class="fb"></i></div>
+      <div class="seal" id="seal"><img src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/monograma-A.webp" alt="Aurora"></div>
+    </div>
+    <article class="card" id="card" aria-label="Carta de convite">
+      <img class="mono ln" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/logo-monograma.webp" alt="">
+      <p class="sal ln">Querida família e amigos,</p>
+      <p class="t ln">A Aurora está chegando. Ela já mora na barriguinha da mamãe e, antes mesmo de nascer, virou nosso mundo de cabeça para baixo, do melhor jeito.</p>
+      <p class="t ln">Queremos você com a gente, num jardim encantado, para celebrar esse começo com flores, bolo e muito carinho.</p>
+      <p class="when ln">Domingo, 8 de novembro, às 13h<small>Itapecerica da Serra · Condomínio Chácara da Lagoa</small></p>
+      <p class="sig ln">Sidney Jr. e Andressa<small>com amor, esperando a Aurora</small></p>
+    </article>
+    <div class="open" id="open"><button class="btn" id="btnOpen" type="button">Abrir convite</button><small>ou role a tela para baixo</small></div>
+    <div class="cta" id="cta"><a class="btn" href="#topo" id="ctaGo">Quero confirmar presença</a><span class="arrow" aria-hidden="true">⌄</span></div>
+  </div>
+</section>
 <div class="rg"></div>
 <div class="wrap">
 
-<header class="hero">
+<header class="hero" id="topo">
   <h1 style="margin:0"><img class="logo" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/logo-arco.webp" alt="Chá de Bebê da Aurora" width="330" height="269"></h1>
   <p class="lead">Jardim Encantado</p>
   <div class="facts">
@@ -411,6 +485,48 @@ $('btnLembrar').onclick=function(){
     baixarIcs(ics({uid:'lembrete-'+o.d.getTime(),ini:o.d,fim:fim,t:'Confirmar presença no Chá da Aurora',loc:'',desc:'Responda aqui até 25/10: '+URL_SITE,alarms:['PT0M']}),'lembrete-cha-da-aurora.ics');
     b.textContent='Lembrete salvo na agenda'}
 };
+})();
+
+/* abertura do convite, guiada pela rolagem */
+(function(){
+  var intro=document.getElementById('intro');if(!intro)return;
+  var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $=function(i){return document.getElementById(i)};
+  var env=$('env'),paper=$('paper'),flap=$('flap'),seal=$('seal'),card=$('card'),pre=$('pre'),open=$('open'),cta=$('cta'),stage=$('stage');
+  var lines=[].slice.call(card.querySelectorAll('.ln')),bfs=[].slice.call(stage.querySelectorAll('.bf'));
+  var clamp=function(x){return x<0?0:x>1?1:x},seg=function(p,a,b){return clamp((p-a)/(b-a))};
+  var ease=function(t){t=clamp(t);return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2};
+  var ticking=false,dist=1;
+  function go(sel){var el=document.querySelector(sel);if(el)window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset,behavior:rm?'auto':'smooth'})}
+  [['skip','#topo'],['ctaGo','#topo']].forEach(function(a){$(a[0]).addEventListener('click',function(e){e.preventDefault();go(a[1])})});
+  if(rm)return;
+  function frame(){
+    ticking=false;
+    var r=intro.getBoundingClientRect();dist=Math.max(1,r.height-window.innerHeight);
+    var p=clamp(-r.top/dist);
+    var s=ease(seg(p,0,.1));
+    var out=seg(p,.46,.58);
+    env.style.opacity=1-out;
+    env.style.transform='translateY('+(out*40)+'px) scale('+(.9+.1*s)+')';
+    var sl=ease(seg(p,.04,.16));
+    seal.style.opacity=1-sl;seal.style.transform='translate(-50%,-50%) scale('+(1+.7*sl)+')';
+    var f=ease(seg(p,.12,.34));
+    flap.style.transform='rotateX('+(-180*f)+'deg)';flap.style.zIndex=f>.5?1:4;
+    var u=ease(seg(p,.3,.5));
+    paper.style.transform='translateY('+(-64*u)+'%)';
+    paper.style.opacity=1-seg(p,.5,.58);
+    var c=ease(seg(p,.46,.64));
+    card.style.opacity=c;card.style.transform='translate(-50%,-50%) scale('+(.6+.4*c)+')';
+    lines.forEach(function(el,i){var t=ease(seg(p,.62+i*.04,.62+i*.04+.1));el.style.opacity=t;el.style.transform='translateY('+((1-t)*14)+'px)'});
+    var h=1-seg(p,0,.05);open.style.opacity=h;open.style.pointerEvents=h>.3?'auto':'none';
+    pre.style.opacity=1-seg(p,.1,.3);
+    var e=seg(p,.94,.99);cta.style.opacity=e;cta.style.pointerEvents=e>.5?'auto':'none';
+    bfs.forEach(function(b,i){b.style.marginTop=(-p*(60+i*30))+'px'});
+  }
+  function req(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
+  window.addEventListener('scroll',req,{passive:true});window.addEventListener('resize',req);
+  $('btnOpen').addEventListener('click',function(){var top=intro.getBoundingClientRect().top+window.pageYOffset;window.scrollTo({top:top+dist*.82,behavior:'smooth'})});
+  frame();
 })();
 </script>
 </body>
