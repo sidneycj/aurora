@@ -68,15 +68,15 @@ input[type=text],input[type=number]{width:100%;background:#fff;border:1.5px soli
 @keyframes sp{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.spin{animation:none}}
 
-.tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
-.tile{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2px;padding:14px 8px 14px;min-height:196px;border:0;cursor:pointer;text-align:center;color:var(--ink);border-radius:999px 999px 24px 24px;background:#FFFDF8 url(https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/linho.webp);background-size:200px;box-shadow:0 0 0 2px #E2C27E,0 0 0 5px #FFFDF8,0 0 0 6.5px #E9CF9A,var(--shadow);transition:transform .15s,box-shadow .15s}
-.tile::before{content:"";position:absolute;inset:7px;border-radius:999px 999px 18px 18px;border:1.5px dashed rgba(200,106,138,.45);pointer-events:none}
-.tile img{width:min(112px,30vw);height:auto;filter:drop-shadow(0 4px 5px rgba(120,60,80,.2));pointer-events:none;margin-bottom:2px}
-.tile b{font-family:var(--display);font-size:clamp(19px,5vw,22px);line-height:1.1;color:var(--rose-ink);font-variant-numeric:lining-nums}
-.tile small{font-size:13px;color:var(--muted);line-height:1.25}
-.tile:hover{transform:translateY(-2px)}
-.tile[aria-pressed=true]{background-color:var(--rose-soft);box-shadow:0 0 0 2.5px var(--rose-ink),0 0 0 6px #FFFDF8,0 0 0 7.5px var(--rose),var(--shadow)}
-.tile[aria-pressed=true]::after{content:"\2713";position:absolute;top:10px;right:14px;width:26px;height:26px;border-radius:50%;background:var(--rose-ink);color:#fff;display:grid;place-items:center;font-size:15px;font-weight:700}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;margin-top:18px}
+.tile{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:0;border:0;background:none;cursor:pointer;text-align:center;color:var(--ink)}
+.tile .im{position:relative;display:block;width:100%;aspect-ratio:1/1;border-radius:22px;overflow:hidden;background:#F6EEDC;box-shadow:0 0 0 2px #E2C27E,0 0 0 4.5px #FFFDF8,var(--shadow);transition:transform .15s,box-shadow .15s}
+.tile img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.tile b{font-family:var(--display);font-size:clamp(17px,4.5vw,20px);line-height:1.12;padding:0 2px;color:var(--rose-ink);font-variant-numeric:lining-nums;text-wrap:balance}
+.tile small{font-size:13px;color:var(--muted);line-height:1.25;margin-top:-3px}
+.tile:hover .im{transform:translateY(-2px)}
+.tile[aria-pressed=true] .im{box-shadow:0 0 0 3px var(--rose-ink),0 0 0 6px #FFFDF8,0 0 0 7.5px var(--rose),var(--shadow)}
+.tile[aria-pressed=true] .im::after{content:"\2713";position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;background:var(--rose-ink);color:#fff;display:grid;place-items:center;font-size:16px;font-weight:700}
 .pick{text-align:center;color:var(--muted);font-size:15px;margin:14px 0 0}
 .panel{scroll-margin-top:12px}
 .panel>h2{margin-bottom:2px}
@@ -171,9 +171,9 @@ dialog.sheet .rel{position:relative}
   <div id="grupos"></div>
 
   <section class="card apoio" id="cApoio" hidden>
-    <h2>Ajude com o que já compramos</h2>
+    <h2>Contribua para o enxoval da Aurora</h2>
     <p class="lead">Já compramos as coisas maiores da Aurora. Se quiser ajudar a pagar parte de algum item, escolha a cota que couber.</p>
-    <p class="sub">Se preferir não, sua presença já é o nosso maior presente. Os valores abaixo são aproximados.</p>
+    <p class="sub">Sua contribuição ajuda a cobrir itens do enxoval que já escolhemos para a Aurora. Se preferir não, sua presença já é o nosso maior presente. Os valores abaixo são aproximados.</p>
     <div id="cotas"></div>
     <div class="free">
       <h3>Prefere só mandar um carinho?</h3>
@@ -253,8 +253,9 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden&&!$(
 
 /* lista */
 var IMG='https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/';
-var GRP=[['Cestas','Cestas','Conjuntos prontos de cerca de R$ 100 ou mais. Pode levar a cesta montada ou fazer o Pix equivalente.','cesta.webp'],['Fraldas','Fraldas e lenços','Os pacotes mais úteis dos primeiros meses.','sentada.webp'],['Itens','Itens avulsos','Coisinhas específicas, cada uma com sua utilidade.','mamadeira.webp']];
-var APOIO_IMG='abraco.webp';
+var SEC='https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/';
+var GRP=[['Cestas','Cestas de presentes','Conjuntos prontos de cerca de R$ 100 ou mais. Pode levar a cesta montada ou fazer o Pix equivalente.','sec-cestas.webp'],['Fraldas','Fraldas e lenços','Os pacotes mais úteis dos primeiros meses.','sec-fraldas.webp'],['Itens','Presentes avulsos','Coisinhas específicas, cada uma com sua utilidade.','sec-avulsos.webp']];
+var APOIO_T='Contribua para o enxoval da Aurora',APOIO_IMG='sec-enxoval.webp';
 S.sel=null;
 function grupoDe(it){var g=it.data.grupo;return g==='Fraldas'||g==='Cestas'?g:'Itens'}
 function preco(it){var a=it.data.preco_min,b=it.data.preco_max;if(a==null)return '';var s=a===b?brl(a):brl(a)+' a '+brl(b);return s+(it.data.grupo==='Cestas'?' a cesta':' cada')}
@@ -284,10 +285,10 @@ function render(){
     var its=S.items.filter(function(x){return grupoDe(x)===g[0]});if(!its.length)return '';
     if(g[0]==='Itens')its=its.slice().sort(function(a,b){return String(a.data.grupo).localeCompare(String(b.data.grupo),'pt-BR')||a.sort-b.sort});
     var livres=its.filter(function(x){return (x.data.qtd||1)>(S.disp[x.id]||0)}).length;
-    tl+='<button type="button" class="tile" data-t="'+g[0]+'" aria-pressed="'+(S.sel===g[0])+'"><img src="'+IMG+g[3]+'" alt="" width="112" height="112"><b>'+esc(g[1])+'</b><small>'+livres+' de '+its.length+' disponíveis</small></button>';
+    tl+='<button type="button" class="tile" data-t="'+g[0]+'" aria-pressed="'+(S.sel===g[0])+'"><span class="im"><img src="'+SEC+g[3]+'" alt="" width="640" height="640"></span><b>'+esc(g[1])+'</b><small>'+livres+' de '+its.length+' disponíveis</small></button>';
     return '<section class="card panel" data-p="'+g[0]+'"'+(S.sel===g[0]?'':' hidden')+' id="p-'+g[0]+'"><h2>'+esc(g[1])+'</h2><p class="sub">'+esc(g[2])+'</p><div class="glist">'+its.map(card).join('')+'</div></section>'
   }).join('');
-  if(S.cotas.length)tl+='<button type="button" class="tile" data-t="Apoio" aria-pressed="'+(S.sel==='Apoio')+'"><img src="'+IMG+APOIO_IMG+'" alt="" width="112" height="112"><b>Ajude com o que já compramos</b><small>cotas e Pix</small></button>';
+  if(S.cotas.length)tl+='<button type="button" class="tile" data-t="Apoio" aria-pressed="'+(S.sel==='Apoio')+'"><span class="im"><img src="'+SEC+APOIO_IMG+'" alt="" width="640" height="640"></span><b>'+esc(APOIO_T)+'</b><small>cotas e Pix</small></button>';
   $('tiles').innerHTML=tl;$('grupos').innerHTML=htm;$('pick').hidden=!!S.sel;
   $('cApoio').hidden=!(S.cotas.length&&S.sel==='Apoio');
   $('cotas').innerHTML=S.cotas.map(function(k){
