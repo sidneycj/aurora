@@ -470,8 +470,8 @@ $('f').addEventListener('submit',function(ev){
 /* ---------- música ---------- */
 (function(){var b=document.getElementById('mus'),a=document.getElementById('aud'),t=document.getElementById('musT'),cr=document.getElementById('cred');if(!b||!a)return;
   var q=/[?&]m=2/.test(location.search),
-  T=q?{src:'https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/musica2.mp3',txt:'Música: "Happy BGM", syncopika, <a href="https://opengameart.org/content/happy-bgm-pianoviolinflutedrums" target="_blank" rel="noopener">CC BY 3.0</a>'}
-     :{src:'https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/musica1.mp3',txt:'Música: "A Journey Awaits!", Pierre Bondoerffer, <a href="https://opengameart.org/content/a-journey-awaits" target="_blank" rel="noopener">CC BY-SA 3.0</a>'};
+  T=q?{src:'https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/musica1.mp3',txt:'Música: "A Journey Awaits!", Pierre Bondoerffer, <a href="https://opengameart.org/content/a-journey-awaits" target="_blank" rel="noopener">CC BY-SA 3.0</a>'}
+     :{src:'https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/musica3.mp3',txt:'Música: "The Magical Garden", dupilupiworld, via <a href="https://pixabay.com/pt/music/m%C3%BAsicas-felizes-para-crian%C3%A7as-the-magical-garden-295596/" target="_blank" rel="noopener">Pixabay</a>'};
   a.src=T.src;if(cr)cr.innerHTML=T.txt;
   var user=false,vol=.4,fade=null;a.volume=0;
   function set(on){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');t.textContent=on?'Pausar música':'Tocar música'}
