@@ -114,8 +114,12 @@ footer img{display:block;width:130px;height:auto;margin:0 auto 6px}
 .stage .corner{position:absolute;width:min(170px,38vw);height:auto;pointer-events:none;opacity:.95}
 .stage .c1{top:-6px;left:-6px}.stage .c2{bottom:-6px;right:-6px;transform:rotate(180deg)}
 .bf{position:absolute;width:min(84px,19vw);height:auto;pointer-events:none;will-change:transform;filter:drop-shadow(0 6px 8px rgba(120,60,80,.18))}
-.bf.b1{right:9%;bottom:27%;animation:fl1 7s ease-in-out infinite}
+.bf{z-index:7;--ew:min(88vw,430px);--cy:calc(50% + 4vh)}
+.bf.b1{left:calc(50% - var(--ew)/2 - 18px);top:calc(var(--cy) - var(--ew)/3 - 46px);animation:fl1 7s ease-in-out infinite}
 .bf.b2{right:8%;top:30%;width:min(70px,16vw);animation:fl2 8.5s ease-in-out infinite}
+.bf.b4{width:min(52px,12vw);left:calc(50% + var(--ew)/2 - 22px);top:calc(var(--cy) + var(--ew)/14);animation:fl2 7.5s ease-in-out -2s infinite}
+.bf.b5{width:min(56px,13vw);left:calc(50% - var(--ew)/2 - 8px);top:calc(var(--cy) + var(--ew)/3 - 6px);animation:fl3 8s ease-in-out -4s infinite}
+.bf.b6{width:min(50px,12vw);left:calc(50% + var(--ew)/5);top:calc(var(--cy) + var(--ew)/3 + 4px);animation:fl1 9s ease-in-out -1s infinite}
 .bf.b3{left:16%;bottom:16%;width:min(62px,14vw);animation:fl3 9.5s ease-in-out infinite}
 @keyframes fl1{0%,100%{transform:translate(0,0) rotate(-8deg)}50%{transform:translate(18px,-22px) rotate(8deg)}}
 @keyframes fl2{0%,100%{transform:translate(0,0) rotate(10deg)}50%{transform:translate(-22px,16px) rotate(-6deg)}}
@@ -194,7 +198,7 @@ main>.card,main>section{position:relative;z-index:1}
   <div class="stage" id="stage">
     <img class="corner c1" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/cantoneira.webp" alt="">
     <img class="corner c2" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/cantoneira.webp" alt="">
-    <img class="bf b1" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/borb-rosa.webp" alt=""><img class="bf b2" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/borb-lilas.webp" alt=""><img class="bf b3" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/borb-dourada.webp" alt="">
+    <img class="bf b1" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/borb-rosa.webp" alt=""><img class="bf b2" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/borb-lilas.webp" alt=""><img class="bf b3" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/borb-dourada.webp" alt=""><img class="bf b4" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/borb-rosa.webp" alt=""><img class="bf b5" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/borb-lilas.webp" alt=""><img class="bf b6" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/borb-dourada.webp" alt="">
     <a class="skip" href="#topo" id="skip">Pular</a>
     <div class="pre" id="pre"><img class="plogo" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/logo-circulo.webp" alt="Chá de Bebê da Aurora" width="760" height="748">Psiu! Recado da Aurora<small>escrito só para você</small></div>
     <div class="env" id="env">
