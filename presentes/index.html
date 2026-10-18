@@ -41,7 +41,13 @@ button,input,select,textarea{font:inherit;color:inherit}
 .hero .cl{left:4px}.hero .cr{right:4px;transform:scaleX(-1)}
 .hero .logo{display:block;width:min(330px,80vw);height:auto;margin:4px auto 2px;position:relative}
 .hero h1{margin:10px 0 8px}
-.hero p{max-width:440px;margin:0 auto .5em;color:var(--ink)}
+.hero p{margin:0}
+.hero .logo.mono{width:min(210px,56vw);margin:2px auto 0}
+.hero .eyebrow{margin:6px 0 2px;font-weight:600;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.hero h1{font-size:clamp(38px,10.5vw,52px);margin:4px 0 0;letter-spacing:-.01em}
+.hero .div{display:block;width:min(260px,70vw);height:auto;margin:6px auto 10px;opacity:.95}
+.hero .lead{font-family:var(--display);font-size:clamp(21px,5.6vw,25px);font-weight:600;line-height:1.28;color:var(--ink);max-width:420px;margin:0 auto .45em}
+.hero .sm{font-size:16px;color:var(--muted);max-width:400px;margin:0 auto}
 .bb{display:block;margin:0 auto;height:auto;filter:drop-shadow(0 6px 8px rgba(120,60,80,.18));pointer-events:none}
 .hero .bb{width:min(150px,40vw);margin-top:10px}
 .bob{animation:bobb 4.2s ease-in-out infinite}
@@ -139,12 +145,12 @@ dialog.sheet .rel{position:relative}
 <div class="wrap">
 <a class="back" href="../" id="voltar">← Voltar ao convite</a>
 <header class="hero">
-  <img class="corner cl" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/cantoneira.webp" alt="">
-  <img class="corner cr" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/cantoneira.webp" alt="">
-  <img class="logo" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/logo-arco.webp" alt="Chá de Bebê da Aurora" width="760" height="619">
+  <img class="logo mono" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/logo-monograma.webp" alt="Aurora" width="620" height="712">
+  <p class="eyebrow">Chá de bebê · 08 de novembro</p>
   <h1>Lista de presentes</h1>
-  <p>Nada aqui é obrigatório. Sua presença já é o nosso maior presente.</p>
-  <p>Se quiser mimar a Aurora, escolha abaixo um item para levar no dia do chá ou ajude por Pix.</p>
+  <img class="div" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/divisor.webp" alt="">
+  <p class="lead">Nada aqui é obrigatório. Sua presença já é o nosso maior presente.</p>
+  <p class="sm">Se quiser mimar a Aurora, escolha abaixo um item para levar no dia do chá ou ajude por Pix.</p>
 </header>
 
 <main>
