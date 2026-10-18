@@ -135,15 +135,15 @@ footer img{display:block;width:130px;height:auto;margin:0 auto 6px}
 .env .flap .fb{background:linear-gradient(0deg,#E9A3B8,#F3BDCB);transform:rotateX(180deg)}
 .seal{position:absolute;left:50%;top:57%;width:min(74px,17vw);aspect-ratio:1;transform:translate(-50%,-50%);z-index:6;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F4D79B,#CFA24F 60%,#A97B2F);box-shadow:0 4px 10px rgba(90,50,20,.4),inset 0 0 0 3px rgba(255,255,255,.25);display:grid;place-items:center;will-change:transform,opacity}
 .seal img{width:72%;height:auto}
-.card{position:absolute;left:50%;top:calc(50% - 38px);width:min(90vw,500px);max-height:calc(100vh - 170px);max-height:calc(100svh - 170px);overflow:hidden;transform:translate(-50%,-50%);z-index:8;background:#FFFDF8 url(https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/linho.webp);background-size:240px;border:1px solid #F1D3DB;border-radius:18px;padding:clamp(22px,6vw,38px) clamp(20px,6vw,38px) clamp(20px,5vw,30px);text-align:center;box-shadow:0 24px 60px rgba(120,50,75,.3);opacity:0;pointer-events:none;will-change:transform,opacity}
-.card .mono{display:block;width:clamp(52px,min(14vw,8vh),78px);height:auto;margin:-4px auto 6px}
-.card .ln{opacity:0;will-change:transform,opacity}
-.card .sal{font-family:'Pinyon Script',cursive;font-size:clamp(28px,min(8vw,4.6vh),40px);color:var(--rose-ink);line-height:1.1;margin:0 0 8px}
-.card p.t{font-family:var(--display);font-weight:600;font-size:clamp(16px,min(4.7vw,2.75vh),22px);line-height:1.38;color:var(--ink);margin:0 0 .7em}
-.card .when{font-family:var(--display);font-weight:700;font-size:clamp(19px,5.2vw,24px);color:var(--rose-ink);margin:.4em 0 .5em}
-.card .when small{display:block;font:500 14px var(--body);color:var(--muted)}
-.card .sig{font-family:'Pinyon Script',cursive;font-size:clamp(28px,7.6vw,36px);color:var(--rose-ink);line-height:1.15;margin:6px 0 0}
-.card .sig small{display:block;font:500 13px var(--body);color:var(--muted);margin-top:2px}
+.letter{position:absolute;left:50%;top:calc(50% - 38px);width:min(90vw,500px);max-height:calc(100vh - 170px);max-height:calc(100svh - 170px);overflow:hidden;transform:translate(-50%,-50%);z-index:8;background:#FFFDF8 url(https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/linho.webp);background-size:240px;border:1px solid #F1D3DB;border-radius:18px;padding:clamp(22px,6vw,38px) clamp(20px,6vw,38px) clamp(20px,5vw,30px);text-align:center;box-shadow:0 24px 60px rgba(120,50,75,.3);opacity:0;pointer-events:none;will-change:transform,opacity}
+.letter .mono{display:block;width:clamp(52px,min(14vw,8vh),78px);height:auto;margin:-4px auto 6px}
+.letter .ln{opacity:0;will-change:transform,opacity}
+.letter .sal{font-family:'Pinyon Script',cursive;font-size:clamp(28px,min(8vw,4.6vh),40px);color:var(--rose-ink);line-height:1.1;margin:0 0 8px}
+.letter p.t{font-family:var(--display);font-weight:600;font-size:clamp(16px,min(4.7vw,2.75vh),22px);line-height:1.38;color:var(--ink);margin:0 0 .7em}
+.letter .when{font-family:var(--display);font-weight:700;font-size:clamp(19px,5.2vw,24px);color:var(--rose-ink);margin:.4em 0 .5em}
+.letter .when small{display:block;font:500 14px var(--body);color:var(--muted)}
+.letter .sig{font-family:'Pinyon Script',cursive;font-size:clamp(28px,7.6vw,36px);color:var(--rose-ink);line-height:1.15;margin:6px 0 0}
+.letter .sig small{display:block;font:500 13px var(--body);color:var(--muted);margin-top:2px}
 .cta{position:absolute;left:0;right:0;bottom:max(22px,env(safe-area-inset-bottom,0px));display:grid;place-items:center;gap:6px;z-index:9;opacity:0;pointer-events:none}
 .cta .btn{box-shadow:0 8px 22px rgba(156,63,98,.35)}
 .cta .arrow{font-size:22px;color:var(--rose-ink);animation:bob 1.6s ease-in-out infinite}
@@ -151,10 +151,10 @@ footer img{display:block;width:130px;height:auto;margin:0 auto 6px}
 .open{position:absolute;left:0;right:0;bottom:max(26px,env(safe-area-inset-bottom,0px));display:grid;place-items:center;gap:8px;z-index:9}
 .open small{color:var(--muted);font-size:14px}
 .skip{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:14px;z-index:10;background:rgba(255,249,250,.8);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--rose-ink);font-weight:600;cursor:pointer;text-decoration:none}
-@media (max-height:700px){.card .mono{display:none}.card{padding-top:20px}}
+@media (max-height:700px){.letter .mono{display:none}.letter{padding-top:20px}}
 @media (prefers-reduced-motion:reduce){
   .intro{height:auto}.stage{position:relative;height:auto;min-height:100svh;padding:40px 0}
-  .env,.bf,.open,.cta,.skip,.seal,.pre{display:none}.card{position:relative;left:auto;top:auto;transform:none;opacity:1;margin:0 auto}.card .ln{opacity:1}
+  .env,.bf,.open,.cta,.skip,.seal,.pre{display:none}.letter{position:relative;left:auto;top:auto;transform:none;opacity:1;margin:0 auto}.letter .ln{opacity:1}
 }
 </style>
 </head>
@@ -171,7 +171,7 @@ footer img{display:block;width:130px;height:auto;margin:0 auto 6px}
       <div class="flap" id="flap"><i class="ff"></i><i class="fb"></i></div>
       <div class="seal" id="seal"><img src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/monograma-A.webp" alt="Aurora"></div>
     </div>
-    <article class="card" id="card" aria-label="Carta de convite">
+    <article class="letter" id="card" aria-label="Carta de convite">
       <img class="mono ln" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/logo-monograma.webp" alt="">
       <p class="sal ln">Querida família e amigos,</p>
       <p class="t ln">A Aurora está chegando. Ela já mora na barriguinha da mamãe e, antes mesmo de nascer, virou nosso mundo de cabeça para baixo, do melhor jeito.</p>
@@ -311,7 +311,7 @@ try{history.scrollRestoration='manual'}catch(e){}
 
 function rpc(fn,body){return fetch(SB+fn,{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+KEY,'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.text().then(function(t){var j=null;try{j=t?JSON.parse(t):null}catch(e){}if(!r.ok){var m=(j&&j.message)||'erro';var e=new Error(m);e.status=r.status;throw e}return j})})}
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-function show(id){['sBusca','sForm','sOk','sFim'].forEach(function(x){$(x).hidden=(x!==id)});if(id!=='sBusca')window.scrollTo({top:0,behavior:'smooth'})}
+function show(id){['sBusca','sForm','sOk','sFim'].forEach(function(x){$(x).hidden=(x!==id)});if(id!=='sBusca'){var el=$(id);if(el)window.scrollTo({top:Math.max(0,el.getBoundingClientRect().top+window.pageYOffset-14),behavior:'smooth'})}}
 function fmtD(d){return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'long'})}
 
 /* contagem regressiva */
