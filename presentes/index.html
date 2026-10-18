@@ -157,7 +157,7 @@ dialog.sheet .rel{position:relative}
   <section class="card" id="cNome">
     <label for="nome">Seu nome</label>
     <input type="text" id="nome" autocomplete="name" maxlength="80" placeholder="Como devemos anotar o seu presente?">
-    <p class="hint">Só para a gente saber quem mandou tanto carinho. Fica guardado neste aparelho.</p>
+    <p class="hint">Só para a gente saber quem mandou tanto carinho.</p>
   </section>
 
   <div id="load" class="card" style="text-align:center"><span class="spin"></span> Carregando a lista...</div>
@@ -178,8 +178,8 @@ dialog.sheet .rel{position:relative}
 
   <section class="card apoio" id="cApoio" hidden>
     <h2>Contribua para o enxoval da Aurora</h2>
-    <p class="lead">Já compramos as coisas maiores da Aurora. Se quiser ajudar a pagar parte de algum item, escolha a cota que couber.</p>
-    <p class="sub">Sua contribuição ajuda a cobrir itens do enxoval que já escolhemos para a Aurora. Se preferir não, sua presença já é o nosso maior presente. Os valores abaixo são aproximados.</p>
+    <p class="lead">Sua contribuição ajuda a cobrir itens do enxoval que já escolhemos para a Aurora. Escolha a cota que couber.</p>
+    <p class="sub">Os valores abaixo são aproximados.</p>
     <div id="cotas"></div>
     <div class="free">
       <h3>Prefere só mandar um carinho?</h3>
@@ -260,7 +260,7 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden&&!$(
 /* lista */
 var IMG='https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/';
 var SEC='https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/';
-var GRP=[['Cestas','Cestas de presentes','Conjuntos prontos de cerca de R$ 100 ou mais. Pode levar a cesta montada ou fazer o Pix equivalente.','sec-cestas.webp'],['Fraldas','Fraldas e lenços','Os pacotes mais úteis dos primeiros meses.','sec-fraldas.webp'],['Itens','Presentes avulsos','Coisinhas específicas, cada uma com sua utilidade.','sec-avulsos.webp']];
+var GRP=[['Cestas','Cestas de presentes','Conjuntos prontos de cerca de R$ 100 ou mais. Pode levar a cesta montada ou fazer o Pix equivalente.','sec-cestas.webp'],['Fraldas','Fraldas e lenços','Fraldas e lenços para os primeiros meses.','sec-fraldas.webp'],['Itens','Presentes avulsos','Itens específicos para escolher e levar.','sec-avulsos.webp']];
 var APOIO_T='Contribua para o enxoval da Aurora',APOIO_IMG='sec-enxoval.webp';
 S.sel=null;
 function grupoDe(it){var g=it.data.grupo;return g==='Fraldas'||g==='Cestas'?g:'Itens'}
@@ -364,7 +364,7 @@ function desenharPix(){
     h+='<ol class="steps"><li>Pague no app do seu banco.</li>'+(livre?'<li>Este código não tem valor: digite quanto quiser enviar.</li>':'')+'<li>Volte aqui e toque em “Já fiz o Pix” para a gente conferir.</li></ol>';
     if(livre)h+='<label for="shVal" style="margin-top:14px">Valor que você enviou (R$)</label><input type="number" id="shVal" inputmode="decimal" min="1" max="10000" step="0.01" placeholder="Ex.: 80">';
     h+='<div id="shErr" class="err" hidden></div>';
-    h+='<p style="margin:14px 0 0"><button class="btn block" type="button" id="shFeito">Já fiz o Pix</button></p><p class="hint" style="text-align:center">Recebedor: Sidney Correa Junior (Nubank). Confirmamos manualmente.</p>'
+    h+='<p style="margin:14px 0 0"><button class="btn block" type="button" id="shFeito">Já fiz o Pix</button></p><p class="hint" style="text-align:center">Recebedor: Sidney Correa Junior.</p>'
   }
   b.innerHTML=h;
   b.querySelectorAll('.amts button').forEach(function(x){x.onclick=function(){P.valor=+x.dataset.v;desenharPix()}});
