@@ -184,13 +184,7 @@ main{position:relative;padding:0 14px}
 main::before,main::after{content:"";position:absolute;top:0;bottom:0;width:66px;background:url(https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/vine.webp) repeat-y 50% 0/66px auto;pointer-events:none;z-index:0;opacity:.95}
 main::before{left:-40px}main::after{right:-40px;transform:scaleX(-1)}
 main>.card,main>section{position:relative;z-index:1}
-.mus{position:fixed;left:14px;bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:60;display:flex;align-items:center;gap:8px;background:rgba(255,249,250,.92);border:1px solid var(--line);border-radius:999px;padding:9px 15px 9px 12px;font:600 14px var(--body);color:var(--rose-ink);cursor:pointer;box-shadow:0 6px 18px rgba(120,50,75,.2)}
-.mus .ic{font-size:17px;line-height:1}
-.mus.on .ic{animation:bobb 1.4s ease-in-out infinite}
-.mus:not(.on){animation:pulse 2.2s ease-in-out infinite}
 @keyframes pulse{0%,100%{box-shadow:0 6px 18px rgba(120,50,75,.2)}50%{box-shadow:0 6px 18px rgba(120,50,75,.2),0 0 0 7px rgba(214,112,150,.25)}}
-.cred{display:block;margin-top:6px;font-size:12px;opacity:.8}
-.cred a{color:inherit}
 </style>
 </head>
 <body>
@@ -330,13 +324,10 @@ main>.card,main>section{position:relative;z-index:1}
   </section>
 </main>
 
-<button class="mus" id="mus" type="button" aria-pressed="false"><span class="ic" aria-hidden="true">&#9835;</span><span id="musT">Tocar música</span></button>
-<audio id="aud" loop preload="auto"></audio>
 <footer>
   <img class="bb bob" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/lua.webp" alt="" width="170" height="160" loading="lazy">
   <img src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/logo-nome.webp" alt="Aurora" width="130" height="96" loading="lazy">
   Feito com carinho para a chegada da Aurora.
-  <span class="cred" id="cred"></span>
 </footer>
 </div>
 
@@ -468,20 +459,6 @@ $('f').addEventListener('submit',function(ev){
 });
 
 /* ---------- música ---------- */
-(function(){var b=document.getElementById('mus'),a=document.getElementById('aud'),t=document.getElementById('musT'),cr=document.getElementById('cred');if(!b||!a)return;
-  a.src='https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/musica3.mp3';
-  if(cr)cr.innerHTML='Música: "The Magical Garden", dupilupiworld, via <a href="https://pixabay.com/pt/music/m%C3%BAsicas-felizes-para-crian%C3%A7as-the-magical-garden-295596/" target="_blank" rel="noopener">Pixabay</a>';
-  var user=false,vol=.4,fade=null;a.volume=0;
-  function set(on){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');t.textContent=on?'Pausar música':'Tocar música'}
-  function up(){clearInterval(fade);fade=setInterval(function(){a.volume=Math.min(vol,a.volume+.04);if(a.volume>=vol)clearInterval(fade)},120)}
-  function start(ev){if(user||!a.paused)return;if(ev&&ev.target&&ev.target.closest&&ev.target.closest('#mus'))return;var p;try{p=a.play()}catch(e){return}if(p&&p.then){p.then(function(){set(true);if(a.volume<vol)up()}).catch(function(){set(false)})}}
-  /* gestos ficam sempre ativos: se o navegador pausar a música sozinho (rolagem, troca de app), o próximo toque retoma, a menos que a pessoa tenha pausado no botão */
-  ['pointerdown','pointerup','touchstart','touchend','click','keydown','scroll','wheel'].forEach(function(e){document.addEventListener(e,start,{passive:true})});
-  a.addEventListener('pause',function(){if(user||a.ended)return;set(false);setTimeout(start,120)});
-  document.addEventListener('visibilitychange',function(){if(!document.hidden)start()});
-  b.addEventListener('click',function(e){e.stopPropagation();if(a.paused){user=false;a.volume=vol;var p=a.play();if(p&&p.catch)p.catch(function(){});set(true)}else{user=true;a.pause();set(false)}});
-  start();
-})();
 /* ---------- pétalas ---------- */
 (function(){var st=document.getElementById('stage');if(!st||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
   var n=window.innerWidth<600?9:14;
