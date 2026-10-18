@@ -177,6 +177,18 @@ footer .bb{width:min(170px,44vw);margin-bottom:4px}
 .petal{position:absolute;top:-8vh;z-index:1;width:var(--w,14px);height:calc(var(--w,14px)*1.35);border-radius:80% 0 80% 0;background:radial-gradient(circle at 30% 30%,#FFE3EA,#F3A9BE);opacity:.85;pointer-events:none;animation:fall var(--d,12s) linear var(--dl,0s) infinite;will-change:transform}
 @keyframes fall{0%{transform:translate3d(0,0,0) rotate(0)}25%{transform:translate3d(22px,28vh,0) rotate(90deg)}50%{transform:translate3d(-18px,56vh,0) rotate(180deg)}75%{transform:translate3d(20px,84vh,0) rotate(270deg)}100%{transform:translate3d(-6px,112vh,0) rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.petal{display:none}.flip img{animation:none}.flip img:nth-child(n+2){display:none}.peek img{animation:none}}
+
+/* ---------- vinhas laterais e música ---------- */
+html{overflow-x:clip}
+main{position:relative;padding:0 14px}
+main::before,main::after{content:"";position:absolute;top:0;bottom:0;width:66px;background:url(https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/vine.webp) repeat-y 50% 0/66px auto;pointer-events:none;z-index:0;opacity:.95}
+main::before{left:-40px}main::after{right:-40px;transform:scaleX(-1)}
+main>.card,main>section{position:relative;z-index:1}
+.mus{position:fixed;left:14px;bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:60;display:flex;align-items:center;gap:8px;background:rgba(255,249,250,.92);border:1px solid var(--line);border-radius:999px;padding:9px 15px 9px 12px;font:600 14px var(--body);color:var(--rose-ink);cursor:pointer;box-shadow:0 6px 18px rgba(120,50,75,.2)}
+.mus .ic{font-size:17px;line-height:1}
+.mus.on .ic{animation:bobb 1.4s ease-in-out infinite}
+.cred{display:block;margin-top:6px;font-size:12px;opacity:.8}
+.cred a{color:inherit}
 </style>
 </head>
 <body>
@@ -303,10 +315,11 @@ footer .bb{width:min(170px,44vw);margin-bottom:4px}
         <div><b>Como chegar</b>
           <p>Alameda Sabiá, 51, Condomínio Chácara da Lagoa, Itapecerica da Serra/SP.</p>
           <p><b style="display:inline">De Uber ou 99:</b> peça para desembarcar na <b style="display:inline">portaria do condomínio</b>. A casa fica a cerca de 100 metros dali.</p>
+          <p><b style="display:inline">De carro:</b> pode estacionar na rua da casa, dentro do condomínio (em frente e nas laterais). Pedimos só para não bloquear a entrada das garagens dos vizinhos.</p>
           <div class="maps"><a id="lMaps" target="_blank" rel="noopener">Abrir no Google Maps</a><a id="lWaze" target="_blank" rel="noopener">Abrir no Waze</a></div></div></div>
       <div><img src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/ic-convite.webp" alt="">
         <div><b>O que vestir</b>
-          <p>Vai estar calor e o chá é ao ar livre, no jardim. Pense em <b style="display:inline">leve e bem arrumado</b>: vestido ou conjunto leve, camisa ou polo com bermuda de alfaiataria ou calça fresca. Tons claros e pastéis combinam com o jardim.</p>
+          <p>Vai estar calor e o chá é ao ar livre, no jardim. Pense em <b style="display:inline">algo leve e bem arrumado</b>: vestido ou conjunto leve, camisa ou polo com bermuda de alfaiataria ou calça fresca. Tons claros e pastéis combinam com o jardim.</p>
           <p>Para curtir sem sofrer: sapato baixo ou sandália fechada no calcanhar (salto fino afunda na grama). Evite camiseta de time, regata e chinelo de dedo.</p></div></div>
       <div><img src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/ic-mamadeira.webp" alt="">
         <div><b>Bebidas</b>
@@ -315,10 +328,13 @@ footer .bb{width:min(170px,44vw);margin-bottom:4px}
   </section>
 </main>
 
+<button class="mus" id="mus" type="button" aria-pressed="false"><span class="ic" aria-hidden="true">&#9835;</span><span id="musT">Tocar música</span></button>
+<audio id="aud" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/brahms.mp3" loop preload="none"></audio>
 <footer>
   <img class="bb bob" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/lua.webp" alt="" width="170" height="160" loading="lazy">
   <img src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/logo-nome.webp" alt="Aurora" width="130" height="96" loading="lazy">
   Feito com carinho para a chegada da Aurora.
+  <span class="cred">Música: "Brahms' Lullaby (arr. for music box)", Gregor Quendel, <a href="https://opengameart.org/content/classical-music-box-collection" target="_blank" rel="noopener">CC BY 4.0</a></span>
 </footer>
 </div>
 
@@ -449,6 +465,12 @@ $('f').addEventListener('submit',function(ev){
   })
 });
 
+/* ---------- música ---------- */
+(function(){var b=document.getElementById('mus'),a=document.getElementById('aud'),t=document.getElementById('musT');if(!b||!a)return;a.volume=.45;
+  function set(on){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');t.textContent=on?'Pausar música':'Tocar música'}
+  b.addEventListener('click',function(){if(a.paused){var p=a.play();if(p&&p.catch)p.catch(function(){set(false)});set(true)}else{a.pause();set(false)}});
+  a.addEventListener('ended',function(){set(false)});
+})();
 /* ---------- pétalas ---------- */
 (function(){var st=document.getElementById('stage');if(!st||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
   var n=window.innerWidth<600?9:14;
