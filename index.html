@@ -216,7 +216,7 @@ main>.card,main>section{position:relative;z-index:1}
       <p class="sig ln">Com amor, Aurora<small>com a ajuda do papai Sidney Jr. e da mamãe Andressa</small></p>
     </article>
     <div class="open" id="open"><button class="btn" id="btnOpen" type="button">Abrir convite</button><small>ou role a tela para baixo</small></div>
-    <div class="cta" id="cta"><a class="btn" href="#topo" id="ctaGo">Quero confirmar presença</a><span class="arrow" aria-hidden="true">�R</span></div>
+    <div class="cta" id="cta"><a class="btn" href="#topo" id="ctaGo">Quero confirmar presença</a><span class="arrow" aria-hidden="true">⌄</span></div>
   </div>
 </section>
 <div class="rg"></div>
@@ -261,18 +261,18 @@ main>.card,main>section{position:relative;z-index:1}
       <div class="hp" aria-hidden="true"><label>Site <input type="text" name="site" id="hp" tabindex="-1" autocomplete="off"></label></div>
       <p style="font-weight:600;margin:18px 0 0" id="pVai">Vocês vão ao chá?</p>
       <div class="choice" role="group" aria-labelledby="pVai">
-        <button type="button" class="yes" id="bSim" aria-pressed="false">Vamos! �x}0</button>
+        <button type="button" class="yes" id="bSim" aria-pressed="false">Vamos! 🎉</button>
         <button type="button" class="no" id="bNao" aria-pressed="false">Não poderemos ir</button>
       </div>
 
       <div id="detalhes" hidden>
         <label for="nA">Quantos adultos vêm?</label>
-        <div class="step"><button type="button" id="aMenos" aria-label="Menos um adulto">��</button><output id="nA" aria-live="polite">1</output><button type="button" id="aMais" aria-label="Mais um adulto">+</button><span class="sub" id="aMax"></span></div>
+        <div class="step"><button type="button" id="aMenos" aria-label="Menos um adulto">−</button><output id="nA" aria-live="polite">1</output><button type="button" id="aMais" aria-label="Mais um adulto">+</button><span class="sub" id="aMax"></span></div>
         <div id="pessoas"></div>
 
         <div id="blocoCri" hidden>
           <label for="nC">Quantas crianças vêm?</label>
-          <div class="step"><button type="button" id="cMenos" aria-label="Menos uma criança">��</button><output id="nC" aria-live="polite">0</output><button type="button" id="cMais" aria-label="Mais uma criança">+</button><span class="sub" id="cMax"></span></div>
+          <div class="step"><button type="button" id="cMenos" aria-label="Menos uma criança">−</button><output id="nC" aria-live="polite">0</output><button type="button" id="cMais" aria-label="Mais uma criança">+</button><span class="sub" id="cMax"></span></div>
           <div id="criTxt" hidden>
             <label for="nomesCri">Nome e idade das crianças</label>
             <input id="nomesCri" type="text" maxlength="300" placeholder="Ex.: Nina, 6 anos, e Liz, 3 anos">
@@ -358,7 +358,7 @@ function show(id){['sBusca','sForm','sOk','sFim'].forEach(function(x){$(x).hidde
 function fmtD(d){return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'long'})}
 
 /* contagem regressiva */
-(function(){var d=Math.ceil((EVENTO-new Date())/864e5);var c=$('count');if(d>0){c.hidden=false;c.innerHTML='Faltam '+d+(d===1?' dia':' dias')+'<small>para o chá da Aurora</small>'}else if(d===0){c.hidden=false;c.innerHTML='�0 hoje!'}})();
+(function(){var d=Math.ceil((EVENTO-new Date())/864e5);var c=$('count');if(d>0){c.hidden=false;c.innerHTML='Faltam '+d+(d===1?' dia':' dias')+'<small>para o chá da Aurora</small>'}else if(d===0){c.hidden=false;c.innerHTML='É hoje!'}})();
 $('lMaps').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(ENDER);
 $('lWaze').href='https://waze.com/ul?q='+encodeURIComponent(ENDER)+'&navigate=yes';
 
@@ -377,7 +377,7 @@ $('q').addEventListener('input',function(){
       if(n!==S.reqN)return;
       if(!r||!r.length){$('res').innerHTML='';$('hintBusca').textContent='Não encontramos esse nome. Tente só o primeiro nome ou outra grafia. Se continuar sem aparecer, avise a Andressa ou o Sidney.';return}
       $('hintBusca').textContent=r.length+(r.length===1?' resultado. Toque para continuar.':' resultados. Toque no seu.');
-      $('res').innerHTML=r.map(function(x){var com=x.com&&x.com.trim()?'com '+esc(x.com):'sozinho(a)';var rot=x.rotulo?' · '+esc(x.rotulo):'';return '<button type="button" class="res" role="listitem" data-id="'+esc(x.id)+'"><span><b>'+esc(x.nome)+'</b><span>'+com+rot+'</span></span><i aria-hidden="true">⬺</i></button>'}).join('')
+      $('res').innerHTML=r.map(function(x){var com=x.com&&x.com.trim()?'com '+esc(x.com):'sozinho(a)';var rot=x.rotulo?' · '+esc(x.rotulo):'';return '<button type="button" class="res" role="listitem" data-id="'+esc(x.id)+'"><span><b>'+esc(x.nome)+'</b><span>'+com+rot+'</span></span><i aria-hidden="true">›</i></button>'}).join('')
     }).catch(function(){if(n!==S.reqN)return;$('res').innerHTML='';$('hintBusca').textContent='Sem conexão agora. Confira sua internet e tente de novo.'})
   },280)
 });
@@ -530,7 +530,7 @@ function baixarIcs(txt,nome){
   a.href=url;a.download=nome;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(url);a.remove()},800)
 }
 function encaminhar(){
-  var txt='Você está convidado para o Chá de Bebê da Aurora! �xR�\nDomingo, 8 de novembro de 2026, às 13h\n'+ENDER+'\nConfirme sua presença até 25/10: '+URL_SITE;
+  var txt='Você está convidado para o Chá de Bebê da Aurora! 🌸\nDomingo, 8 de novembro de 2026, às 13h\n'+ENDER+'\nConfirme sua presença até 25/10: '+URL_SITE;
   if(navigator.share){navigator.share({title:'Chá de Bebê da Aurora',text:txt}).catch(function(){})}
   else{window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank','noopener')}
 }
