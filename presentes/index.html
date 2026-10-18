@@ -39,8 +39,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 .hero{position:relative;text-align:center;margin-top:10px;padding:22px 16px 22px;background:linear-gradient(180deg,var(--surface),var(--bg));border:1px solid var(--line);border-radius:min(220px,44vw) min(220px,44vw) 28px 28px;overflow:hidden}
 .hero .corner{position:absolute;top:6px;width:min(110px,24vw);height:auto;pointer-events:none}
 .hero .cl{left:4px}.hero .cr{right:4px;transform:scaleX(-1)}
-.hero .logo{display:block;width:min(240px,60vw);height:auto;margin:4px auto 2px;position:relative}
-.hero h1{margin:6px 0 8px}
+.hero .logo{display:block;width:min(330px,80vw);height:auto;margin:4px auto 2px;position:relative}
+.hero h1{margin:10px 0 8px}
 .hero p{max-width:440px;margin:0 auto .5em;color:var(--ink)}
 .bb{display:block;margin:0 auto;height:auto;filter:drop-shadow(0 6px 8px rgba(120,60,80,.18));pointer-events:none}
 .hero .bb{width:min(150px,40vw);margin-top:10px}
@@ -68,14 +68,20 @@ input[type=text],input[type=number]{width:100%;background:#fff;border:1.5px soli
 @keyframes sp{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.spin{animation:none}}
 
-details.grp{background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);margin-top:16px;overflow:hidden}
-details.grp>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:18px 16px;min-height:64px}
-details.grp>summary::-webkit-details-marker{display:none}
-details.grp>summary h2{font-size:clamp(24px,6.4vw,30px)}
-details.grp>summary small{display:block;font:500 14px var(--body);color:var(--muted);margin-top:2px}
-details.grp>summary::after{content:"+";flex:none;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--rose);display:grid;place-items:center;font:600 24px/1 var(--body);color:var(--rose-ink)}
-details.grp[open]>summary::after{content:"\2212"}
-.glist{display:grid;gap:12px;padding:0 12px 14px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.tile{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2px;padding:14px 8px 14px;min-height:196px;border:0;cursor:pointer;text-align:center;color:var(--ink);border-radius:999px 999px 24px 24px;background:#FFFDF8 url(https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/linho.webp);background-size:200px;box-shadow:0 0 0 2px #E2C27E,0 0 0 5px #FFFDF8,0 0 0 6.5px #E9CF9A,var(--shadow);transition:transform .15s,box-shadow .15s}
+.tile::before{content:"";position:absolute;inset:7px;border-radius:999px 999px 18px 18px;border:1.5px dashed rgba(200,106,138,.45);pointer-events:none}
+.tile img{width:min(112px,30vw);height:auto;filter:drop-shadow(0 4px 5px rgba(120,60,80,.2));pointer-events:none;margin-bottom:2px}
+.tile b{font-family:var(--display);font-size:clamp(19px,5vw,22px);line-height:1.1;color:var(--rose-ink);font-variant-numeric:lining-nums}
+.tile small{font-size:13px;color:var(--muted);line-height:1.25}
+.tile:hover{transform:translateY(-2px)}
+.tile[aria-pressed=true]{background-color:var(--rose-soft);box-shadow:0 0 0 2.5px var(--rose-ink),0 0 0 6px #FFFDF8,0 0 0 7.5px var(--rose),var(--shadow)}
+.tile[aria-pressed=true]::after{content:"\2713";position:absolute;top:10px;right:14px;width:26px;height:26px;border-radius:50%;background:var(--rose-ink);color:#fff;display:grid;place-items:center;font-size:15px;font-weight:700}
+.pick{text-align:center;color:var(--muted);font-size:15px;margin:14px 0 0}
+.panel{scroll-margin-top:12px}
+.panel>h2{margin-bottom:2px}
+.panel>.sub{margin-bottom:10px}
+.glist{display:grid;gap:12px;margin-top:10px}
 .gift{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:14px}
 .gift.done{background:#F4EFF1;border-style:dashed}
 .gh{display:flex;gap:8px;align-items:flex-start;justify-content:space-between}
@@ -135,11 +141,10 @@ dialog.sheet .rel{position:relative}
 <header class="hero">
   <img class="corner cl" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/cantoneira.webp" alt="">
   <img class="corner cr" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/cantoneira.webp" alt="">
-  <img class="logo" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/logo-nome.webp" alt="Aurora" width="240" height="178">
+  <img class="logo" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/logo-arco.webp" alt="Chá de Bebê da Aurora" width="760" height="619">
   <h1>Lista de presentes</h1>
   <p>Nada aqui é obrigatório. Sua presença já é o nosso maior presente.</p>
   <p>Se quiser mimar a Aurora, escolha abaixo um item para levar no dia do chá ou ajude por Pix.</p>
-  <img class="bb bob" src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/cesta.webp" alt="" width="150" height="150">
 </header>
 
 <main>
@@ -159,6 +164,9 @@ dialog.sheet .rel{position:relative}
     <h2>Seus presentes</h2>
     <ul id="mineList"></ul>
   </section>
+
+  <nav class="tiles" id="tiles" aria-label="O que você quer fazer?"></nav>
+  <p class="pick" id="pick">Toque em uma das opções para ver os itens.</p>
 
   <div id="grupos"></div>
 
@@ -236,6 +244,7 @@ function load(silent){
     S.items=S.cat.filter(function(x){return x.kind==='presente'&&!x.data.oculto});
     S.cotas=S.cat.filter(function(x){return x.kind==='cota'});
     S.pix={};S.aberto=null;S.cat.filter(function(x){return x.kind==='pix'}).forEach(function(x){if(x.data.valor==null)S.aberto=x;else S.pix[x.data.valor]=x});
+    if(!S.init){S.init=1;var h=location.hash.slice(1).toLowerCase();['Cestas','Fraldas','Itens','Apoio'].forEach(function(t){if(t.toLowerCase()===h)S.sel=t})}
     $('load').hidden=true;render()
   }).catch(function(){if(!silent){$('load').hidden=true;$('erro').hidden=false}})
 }
@@ -243,7 +252,10 @@ $('retry').onclick=function(){load()};
 document.addEventListener('visibilitychange',function(){if(!document.hidden&&!$('sheet').open)load(true)});
 
 /* lista */
-var GRP=[['Fraldas','Fraldas e lenços','Para os primeiros meses, os pacotes mais úteis de todos.'],['Cestas','Cestas','Conjuntos prontos de cerca de R$ 100 ou mais. Pode levar a cesta ou fazer o Pix equivalente.'],['Itens','Itens avulsos','Coisinhas específicas, cada uma com sua utilidade.']];
+var IMG='https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/';
+var GRP=[['Cestas','Cestas','Conjuntos prontos de cerca de R$ 100 ou mais. Pode levar a cesta montada ou fazer o Pix equivalente.','cesta.webp'],['Fraldas','Fraldas e lenços','Os pacotes mais úteis dos primeiros meses.','sentada.webp'],['Itens','Itens avulsos','Coisinhas específicas, cada uma com sua utilidade.','mamadeira.webp']];
+var APOIO_IMG='abraco.webp';
+S.sel=null;
 function grupoDe(it){var g=it.data.grupo;return g==='Fraldas'||g==='Cestas'?g:'Itens'}
 function preco(it){var a=it.data.preco_min,b=it.data.preco_max;if(a==null)return '';var s=a===b?brl(a):brl(a)+' a '+brl(b);return s+(it.data.grupo==='Cestas'?' a cesta':' cada')}
 function detalhe(it){
@@ -267,16 +279,17 @@ function card(it){
   return h+'</article>'
 }
 function render(){
-  var open=[];document.querySelectorAll('details.grp').forEach(function(d){if(d.open)open.push(d.dataset.g)});
-  var first=!$('grupos').children.length;
-  $('grupos').innerHTML=GRP.map(function(g){
+  var tl='';
+  var htm=GRP.map(function(g){
     var its=S.items.filter(function(x){return grupoDe(x)===g[0]});if(!its.length)return '';
     if(g[0]==='Itens')its=its.slice().sort(function(a,b){return String(a.data.grupo).localeCompare(String(b.data.grupo),'pt-BR')||a.sort-b.sort});
     var livres=its.filter(function(x){return (x.data.qtd||1)>(S.disp[x.id]||0)}).length;
-    var isOpen=first?g[0]==='Fraldas':open.indexOf(g[0])>=0;
-    return '<details class="grp" data-g="'+g[0]+'"'+(isOpen?' open':'')+'><summary><div><h2>'+esc(g[1])+'</h2><small>'+esc(g[2])+' · '+livres+' de '+its.length+' ainda disponíveis</small></div></summary><div class="glist">'+its.map(card).join('')+'</div></details>'
+    tl+='<button type="button" class="tile" data-t="'+g[0]+'" aria-pressed="'+(S.sel===g[0])+'"><img src="'+IMG+g[3]+'" alt="" width="112" height="112"><b>'+esc(g[1])+'</b><small>'+livres+' de '+its.length+' disponíveis</small></button>';
+    return '<section class="card panel" data-p="'+g[0]+'"'+(S.sel===g[0]?'':' hidden')+' id="p-'+g[0]+'"><h2>'+esc(g[1])+'</h2><p class="sub">'+esc(g[2])+'</p><div class="glist">'+its.map(card).join('')+'</div></section>'
   }).join('');
-  $('cApoio').hidden=!S.cotas.length;
+  if(S.cotas.length)tl+='<button type="button" class="tile" data-t="Apoio" aria-pressed="'+(S.sel==='Apoio')+'"><img src="'+IMG+APOIO_IMG+'" alt="" width="112" height="112"><b>Ajude com o que já compramos</b><small>cotas e Pix</small></button>';
+  $('tiles').innerHTML=tl;$('grupos').innerHTML=htm;$('pick').hidden=!!S.sel;
+  $('cApoio').hidden=!(S.cotas.length&&S.sel==='Apoio');
   $('cotas').innerHTML=S.cotas.map(function(k){
     var d=k.data,v=(d.cotas_validas&&d.cotas_validas.length?d.cotas_validas:[100,200,300]);
     return '<div class="cota" data-id="'+esc(k.id)+'"><div class="gh"><b>'+esc(d.nome)+'</b>'+(d.quando?'<span class="chip sage">'+esc(d.quando)+'</span>':'')+'</div>'
@@ -286,6 +299,14 @@ function render(){
   $('livre').innerHTML=MENU.map(function(x){return '<button class="btn sm sage" type="button" data-v="'+x+'">'+esc(brl(x))+'</button>'}).join('')+'<button class="btn sm ghost" type="button" data-v="0">Defina seu valor</button>';
   renderMine()
 }
+
+/* escolha da seção */
+function selecionar(t,scroll){
+  S.sel=(S.sel===t)?null:t;render();
+  if(S.sel&&scroll){var el=S.sel==='Apoio'?$('cApoio'):$('p-'+S.sel);if(el)setTimeout(function(){window.scrollTo({top:Math.max(0,el.getBoundingClientRect().top+pageYOffset-12),behavior:'smooth'})},40)}
+  try{history.replaceState(null,'',S.sel?'#'+S.sel.toLowerCase():location.pathname+location.search)}catch(e){}
+}
+$('tiles').addEventListener('click',function(e){var b=e.target.closest('.tile');if(b)selecionar(b.dataset.t,true)});
 
 /* ações na lista */
 $('grupos').addEventListener('click',function(e){
