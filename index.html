@@ -325,7 +325,7 @@ main>.card,main>section{position:relative;z-index:1}
           <p>Para curtir sem sofrer: sapato baixo ou sandália fechada no calcanhar (salto fino afunda na grama). Evite camiseta de time, regata e chinelo de dedo.</p></div></div>
       <div><img src="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/ic-mamadeira.webp" alt="">
         <div><b>Bebidas</b>
-          <p>Vamos ter opções sem álcool, inclusive cerveja zero. Conte sua preferência na confirmação para a gente acertar na compra.</p></div></div>
+          <p>Vamos ter cerveja, drinks (caipirinhas de frutas, gin tônica, negroni) e opções sem álcool, inclusive cerveja zero. Conte sua preferência na confirmação para a gente acertar na compra.</p></div></div>
     </div>
   </section>
 </main>
@@ -344,7 +344,10 @@ var SB='https://phfciuifxiqurctfxvrl.supabase.co/rest/v1/rpc/',KEY='sb_publishab
 var PRAZO=new Date('2026-10-26T00:00:00-03:00'),EVENTO=new Date('2026-11-08T13:00:00-03:00');
 var ENDER='Alameda Sabiá, 51, Condomínio Chácara da Lagoa, Itapecerica da Serra, SP';
 var URL_SITE=location.origin+location.pathname;
-var DRINKS=['Cerveja','Cerveja zero álcool','Refrigerante','Suco','Água','Sem preferência'];
+var DRINKS=[
+ {g:'Com álcool',o:[['Cerveja','Cerveja'],['Drinks','Drinks (caipirinhas, gin tônica, negroni)']]},
+ {g:'Sem álcool',o:[['Cerveja zero álcool','Cerveja zero álcool'],['Refrigerante','Refrigerante'],['Suco','Suco'],['Água','Água'],['Sem preferência','Sem preferência']]}
+];
 var $=function(id){return document.getElementById(id)};
 var S={g:null,vai:null,nA:1,nC:0,maxA:1,maxC:0,busy:false,tm:null,reqN:0,enc:false};
 try{history.scrollRestoration='manual'}catch(e){}
@@ -433,7 +436,7 @@ function desenhar(){
   var h='';
   for(var i=0;i<S.nA;i++){
     var nm=S.names[i]!=null?S.names[i]:'';var dv=S.drinks[i]||'';
-    h+='<div class="person"><label for="pn'+i+'">Adulto '+(i+1)+'</label><input type="text" id="pn'+i+'" data-i="'+i+'" class="pn" maxlength="60" value="'+esc(nm)+'" placeholder="Nome completo (obrigatório)"><label for="pd'+i+'" style="margin-top:4px">O que prefere beber?</label><select id="pd'+i+'" data-i="'+i+'" class="pd"><option value="">Escolha...</option>'+DRINKS.map(function(d){return '<option'+(d===dv?' selected':'')+'>'+d+'</option>'}).join('')+'</select></div>'
+    h+='<div class="person"><label for="pn'+i+'">Adulto '+(i+1)+'</label><input type="text" id="pn'+i+'" data-i="'+i+'" class="pn" maxlength="60" value="'+esc(nm)+'" placeholder="Nome completo (obrigatório)"><label for="pd'+i+'" style="margin-top:4px">O que prefere beber?</label><select id="pd'+i+'" data-i="'+i+'" class="pd"><option value="">Escolha...</option>'+DRINKS.map(function(gr){return '<optgroup label="'+gr.g+'">'+gr.o.map(function(d){return '<option value="'+d[0]+'"'+(d[0]===dv?' selected':'')+'>'+d[1]+'</option>'}).join('')+'</optgroup>'}).join('')+'</select></div>'
   }
   $('pessoas').innerHTML=h
 }
