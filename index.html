@@ -180,6 +180,7 @@ footer .bb{width:min(170px,44vw);margin-bottom:4px}
 
 /* ---------- vinhas laterais e música ---------- */
 html{overflow-x:clip}
+body{overflow-x:clip}
 main{position:relative;padding:0 14px}
 main::before,main::after{content:"";position:absolute;top:0;bottom:0;width:66px;background:url(https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/bb/vine.webp) repeat-y 50% 0/66px auto;pointer-events:none;z-index:0;opacity:.95}
 main::before{left:-40px}main::after{right:-40px;transform:scaleX(-1)}
@@ -301,6 +302,7 @@ main>.card,main>section{position:relative;z-index:1}
   <section class="card" id="sFim" hidden>
     <h2>As confirmações foram encerradas</h2>
     <p class="sub">O prazo terminou em 25 de outubro. Se precisar mudar algo, fale direto com a Andressa ou com o Sidney.</p>
+    <p style="margin-top:12px"><a class="btn ghost block" href="presentes/">🎁 Ver a lista de presentes</a></p>
   </section>
 
   <!-- informações -->
@@ -478,6 +480,7 @@ function concluir(extra){
     $('okSum').innerHTML='<b>'+esc(g.nome)+'</b><br>'+S.nA+(S.nA===1?' adulto':' adultos')+(S.nC?' e '+S.nC+(S.nC===1?' criança':' crianças'):'')+' · Domingo, 8 de novembro, às 13h';
     acts.innerHTML='<a class="btn block" id="aIcs" href="#">Adicionar à agenda (com lembretes)</a>'
       +'<div class="row"><a class="btn ghost" id="aGoog" target="_blank" rel="noopener">Google Agenda</a><a class="btn ghost" id="aMaps" target="_blank" rel="noopener">Como chegar</a></div>'
+      +'<a class="btn ghost block" id="aGift" href="presentes/">🎁 Ver a lista de presentes (opcional)</a>'
       +'<button class="btn sage block" id="aZap" type="button">Enviar o convite para quem vem com você</button>';
     $('aIcs').onclick=function(e){e.preventDefault();baixarIcs(icsEvento(),'cha-da-aurora.ics')};
     $('aGoog').href=googEvento();$('aMaps').href=$('lMaps').href;
@@ -486,8 +489,9 @@ function concluir(extra){
     $('okT').textContent='Obrigada por avisar';
     $('okP').textContent='Vamos sentir sua falta, mas agradecemos o carinho. Se algo mudar até 25 de outubro, é só voltar aqui e alterar a resposta.';
     $('okSum').innerHTML='<b>'+esc(g.nome)+'</b><br>Resposta registrada: não poderão ir.';
-    acts.innerHTML=''
+    acts.innerHTML='<p class="sub" style="margin:0">Se quiser mandar um carinho para a Aurora mesmo assim, a lista de presentes está aberta (sem obrigação nenhuma).</p><a class="btn ghost block" id="aGift" href="presentes/">🎁 Ver a lista de presentes</a>'
   }
+  try{localStorage.setItem('aurora_nome',g.nome||'')}catch(e){}
   show('sOk')
 }
 $('alterar').onclick=function(){montarForm();show('sForm')};
