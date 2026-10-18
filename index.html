@@ -114,15 +114,15 @@ footer img{display:block;width:130px;height:auto;margin:0 auto 6px}
 .stage .corner{position:absolute;width:min(170px,38vw);height:auto;pointer-events:none;opacity:.95}
 .stage .c1{top:-6px;left:-6px}.stage .c2{bottom:-6px;right:-6px;transform:rotate(180deg)}
 .bf{position:absolute;width:min(84px,19vw);height:auto;pointer-events:none;will-change:transform;filter:drop-shadow(0 6px 8px rgba(120,60,80,.18))}
-.bf.b1{left:9%;top:18%;animation:fl1 7s ease-in-out infinite}
+.bf.b1{right:9%;bottom:27%;animation:fl1 7s ease-in-out infinite}
 .bf.b2{right:8%;top:30%;width:min(70px,16vw);animation:fl2 8.5s ease-in-out infinite}
 .bf.b3{left:16%;bottom:16%;width:min(62px,14vw);animation:fl3 9.5s ease-in-out infinite}
 @keyframes fl1{0%,100%{transform:translate(0,0) rotate(-8deg)}50%{transform:translate(18px,-22px) rotate(8deg)}}
 @keyframes fl2{0%,100%{transform:translate(0,0) rotate(10deg)}50%{transform:translate(-22px,16px) rotate(-6deg)}}
 @keyframes fl3{0%,100%{transform:translate(0,0) rotate(4deg)}50%{transform:translate(16px,-14px) rotate(-10deg)}}
-.pre{position:absolute;top:max(22px,env(safe-area-inset-top,0px));left:0;right:0;text-align:center;font-family:var(--display);color:var(--rose-ink);font-size:clamp(20px,5.4vw,26px);font-weight:600;line-height:1.2;padding:30px 20px 0}
+.pre{position:absolute;top:max(22px,env(safe-area-inset-top,0px));left:0;right:0;text-align:center;font-family:var(--display);color:var(--rose-ink);font-size:clamp(20px,5.4vw,26px);font-weight:600;line-height:1.2;padding:30px 20px 0;z-index:7;text-shadow:0 0 12px rgba(253,239,242,.95),0 0 4px rgba(253,239,242,.9)}
 .pre .plogo{display:block;width:clamp(84px,min(24vw,13vh),128px);height:auto;margin:0 auto 10px;filter:drop-shadow(0 6px 10px rgba(120,60,80,.18))}
-.pre small{display:block;font:500 13px var(--body);letter-spacing:.02em;color:var(--muted);margin-top:4px}
+.pre small{display:block;color:#5A4350;font:500 13px var(--body);letter-spacing:.02em;color:var(--muted);margin-top:4px}
 .env{position:relative;width:min(88vw,430px);aspect-ratio:1.5/1;perspective:900px;will-change:transform,opacity;margin-top:8vh}
 .env>*{position:absolute}
 .env .eback{inset:0;background:linear-gradient(180deg,#EBB2C0,#E49DB0);border-radius:8px;box-shadow:0 18px 40px rgba(120,50,75,.28);z-index:1}
