@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Chá de Bebê da Aurora · Confirme sua presença</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Você está convidado para o Chá de Bebê da Aurora. 08 de novembro de 2026, às 13h. Confirme sua presença até 25 de outubro.">
+<meta name="description" content="Você está convidado para o Chá de Bebê da Aurora. 08 de novembro de 2026, às 13h. Confirme sua presença pelo site.">
 <link rel="icon" type="image/png" href="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/favicon.png">
 <link rel="apple-touch-icon" href="https://phfciuifxiqurctfxvrl.supabase.co/storage/v1/object/public/site/apple-touch-icon.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Chá de Bebê da Aurora"><meta property="og:locale" content="pt_BR"><meta property="og:url" content="https://sidneycj.github.io/aurora/"><meta property="og:title" content="Chá de Bebê da Aurora"><meta property="og:description" content="Jardim Encantado · 08 de novembro de 2026, 13h. Confirme sua presença até 25/10."><meta property="og:image" content="https://sidneycj.github.io/aurora/og-aurora-600.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="600"><meta property="og:image:height" content="600"><meta property="og:image:alt" content="Logo redondo bordado do Chá de Bebê da Aurora, com flores e borboletas"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://sidneycj.github.io/aurora/og-aurora-600.jpg">
@@ -238,7 +238,7 @@ main>.card,main>section{position:relative;z-index:1}
   <!-- 1. busca -->
   <section class="card" id="sBusca" aria-labelledby="tBusca">
     <h2 id="tBusca">Confirme sua presença</h2>
-    <p class="sub">Digite seu nome e toque em você na lista. Respostas até <b>25 de outubro</b>.</p>
+    <p class="sub">Digite seu nome e toque em você na lista. Respostas abertas até o dia do chá.</p>
     <div class="search">
       <label for="q" class="sr" style="margin-top:12px">Seu nome</label>
       <input id="q" type="text" inputmode="text" autocomplete="off" autocapitalize="words" spellcheck="false" placeholder="Comece a digitar seu nome" aria-controls="res">
@@ -299,13 +299,13 @@ main>.card,main>section{position:relative;z-index:1}
     <p class="sub" id="okP"></p>
     <div class="sum" id="okSum"></div>
     <div class="acts" id="okActs"></div>
-    <p class="hint"><button class="link" id="alterar" type="button">Alterar minha resposta</button> (até 25/10)</p>
+    <p class="hint"><button class="link" id="alterar" type="button">Alterar minha resposta</button> (até o dia do chá)</p>
   </section>
 
   <!-- 4. prazo -->
   <section class="card" id="sFim" hidden>
     <h2>As confirmações foram encerradas</h2>
-    <p class="sub">O prazo terminou em 25 de outubro. Se precisar mudar algo, fale direto com a Andressa ou com o Sidney.</p>
+    <p class="sub">O prazo terminou. Se precisar mudar algo, fale direto com a Andressa ou com o Sidney.</p>
     <p style="margin-top:12px"><a class="btn ghost block" href="presentes/">🎁 Ver a lista de presentes</a></p>
   </section>
 
@@ -341,7 +341,7 @@ main>.card,main>section{position:relative;z-index:1}
 (function(){
 'use strict';
 var SB='https://phfciuifxiqurctfxvrl.supabase.co/rest/v1/rpc/',KEY='sb_publishable_nZMrUiyrjjwIidIT_9NL0g_qdRwG7wE';
-var PRAZO=new Date('2026-10-26T00:00:00-03:00'),EVENTO=new Date('2026-11-08T13:00:00-03:00');
+var PRAZO=new Date('2026-11-08T13:00:00-03:00'),EVENTO=new Date('2026-11-08T13:00:00-03:00');
 var ENDER='Alameda Sabiá, 51, Condomínio Chácara da Lagoa, Itapecerica da Serra, SP';
 var URL_SITE=location.origin+location.pathname;
 var DRINKS=[
@@ -494,7 +494,7 @@ function concluir(extra){
     $('aZap').onclick=encaminhar
   }else{
     $('okT').textContent='Obrigada por avisar';
-    $('okP').textContent='Vamos sentir sua falta, mas agradecemos o carinho. Se algo mudar até 25 de outubro, é só voltar aqui e alterar a resposta.';
+    $('okP').textContent='Vamos sentir sua falta, mas agradecemos o carinho. Se algo mudar, é só voltar aqui e alterar a resposta.';
     $('okSum').innerHTML='<b>'+esc(g.nome)+'</b><br>Resposta registrada: não poderão ir.';
     acts.innerHTML='<p class="sub" style="margin:0">Se quiser mandar um carinho para a Aurora mesmo assim, a lista de presentes está aberta (sem obrigação nenhuma).</p><a class="btn ghost block" id="aGift" href="presentes/">🎁 Ver a lista de presentes</a>'
   }
@@ -518,7 +518,7 @@ function baixarIcs(txt,nome){
   a.href=url;a.download=nome;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(url);a.remove()},800)
 }
 function encaminhar(){
-  var txt='Você está convidado para o Chá de Bebê da Aurora! 🌸\nDomingo, 8 de novembro de 2026, às 13h\n'+ENDER+'\nConfirme sua presença até 25/10: '+URL_SITE;
+  var txt='Você está convidado para o Chá de Bebê da Aurora! 🌸\nDomingo, 8 de novembro de 2026, às 13h\n'+ENDER+'\nConfirme sua presença aqui: '+URL_SITE;
   if(navigator.share){navigator.share({title:'Chá de Bebê da Aurora',text:txt}).catch(function(){})}
   else{window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank','noopener')}
 }
@@ -529,12 +529,11 @@ $('btnLembrar').onclick=function(){
   var now=new Date(),ops=[];
   function add(label,dias){var d=new Date(now.getFullYear(),now.getMonth(),now.getDate()+dias,9,0,0);if(d<PRAZO)ops.push({l:label,d:d})}
   add('Amanhã às 9h',1);add('Daqui a 2 dias às 9h',2);
-  var ult=new Date(2026,9,24,9,0,0);if(ult>now)ops.push({l:'Sábado, 24/10, às 9h (véspera do prazo)',d:ult});
   if(!ops.length){$('lembrarOps').innerHTML='<p class="sub">O prazo está no fim. Confirme agora mesmo pela busca acima.</p>';return}
   $('lembrarOps').innerHTML=ops.map(function(o,i){return '<button class="btn ghost block" type="button" data-i="'+i+'">'+o.l+'</button>'}).join('');
   $('lembrarOps').onclick=function(e){var b=e.target.closest('button');if(!b)return;var o=ops[+b.getAttribute('data-i')];
     var fim=new Date(o.d.getTime()+15*6e4);
-    baixarIcs(ics({uid:'lembrete-'+o.d.getTime(),ini:o.d,fim:fim,t:'Confirmar presença no Chá da Aurora',loc:'',desc:'Responda aqui até 25/10: '+URL_SITE,alarms:['PT0M']}),'lembrete-cha-da-aurora.ics');
+    baixarIcs(ics({uid:'lembrete-'+o.d.getTime(),ini:o.d,fim:fim,t:'Confirmar presença no Chá da Aurora',loc:'',desc:'Responda aqui: '+URL_SITE,alarms:['PT0M']}),'lembrete-cha-da-aurora.ics');
     b.textContent='Lembrete salvo na agenda'}
 };
 })();
